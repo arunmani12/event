@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from "react";
 
-const Header = () => {
+const HeadComponenet = () => {
   return (
     <Head>
       <title>Event</title>
@@ -11,4 +11,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeadComponenet;
