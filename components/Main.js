@@ -7,7 +7,8 @@ const Main = () => {
       <h1 className={styles.title}>
         Hello Guys <span style={{ color: "red" }}>&#10084;</span>
       </h1>
-      <p>sollunga bro</p>
+      <p>sollunga bro hello</p>
+
     </main>
   );
 };
