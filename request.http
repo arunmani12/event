@@ -3,7 +3,7 @@ POST  http://localhost:3000/api/register
 Content-Type: application/json
 
 {
-    "email":"arunmani@1234",
+    "email":"arunmani@124455",
     "DOB":"22-02-2003", 
     "collegeName":"AAMEC",
     "Name" : "Arun"
