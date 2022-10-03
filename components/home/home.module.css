@@ -1,7 +1,7 @@
 .home{
     width: 100%;
     position: relative;
-    height: 100vh;
+    height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
 .inside{
     width: 50%;
     z-index: 50;
-    margin-top: -170px;
+    margin-top: -20px;
     text-align: center;
     color: #777;
     font-weight: 500;
@@ -18,7 +18,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+	background-color: white;
+	box-sizing: border-box;
+	padding: 2%;
+	border-radius: 20px;
 }
+
+@media (max-width: 600px) {
+	.inside{
+		width: 90%;
+		padding: 5%;
+	}
+  }
 
 .inside button{
     width: 90px;
@@ -78,4 +89,30 @@
 	top: 420px;
 	right: 50px;	
 	border-radius: 60px;
+}
+
+.paidevent{
+	width: 70%;
+	margin: 2rem auto;
+	/* height: 400px; */
+	display: flex;
+	color: #777;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.paidevent h3{
+	margin: 15px 0;
+}
+
+.eventCard{
+	width: 48%;
+	height: 100%;
+	padding: 1.2rem;
+	border-radius: 1.2rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.eventCard img{
+	width: 100%;
 }

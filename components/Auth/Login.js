@@ -3,21 +3,30 @@ import Background from "./Background";
 import { MdCancel } from "react-icons/md";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { validateEmail } from "../../comman";
 
 const Login = ({ setShowAuth, setCurrentModel }) => {
+  const router = useRouter();
 
-  const router = useRouter()
-
-  const [email, setEmail] = useState('');
-  const [DOB, setDOB] = useState('');
+  const [email, setEmail] = useState("");
+  const [DOB, setDOB] = useState("");
 
   const onClickHandler = () => {
     setShowAuth((prv) => !prv);
   };
 
+  
+
   const loginHandler = async () => {
-    if (!email.length>0 || !DOB.length>0) {
-      console.log("Register number or dob must not empty");
+    if (!(email.length > 0) || !(DOB.length > 9)) {
+      if (!validateEmail(email)) {
+        toast("Please enter vaild email");   
+        return;
+      }
+      toast("Register number or dob must not empty");
+      return
     }
     const res = await fetch(`http://localhost:3000/api/login`, {
       method: "POST",
@@ -31,16 +40,16 @@ const Login = ({ setShowAuth, setCurrentModel }) => {
     });
     let response = await res.json();
     if (response.message == "Success!") {
-       console.log(response)
-	     router.reload()
-
+      console.log(response);
+      router.reload();
     } else {
-      console.log('please check data')
+      toast("Please check the data");
     }
   };
 
   return (
     <div className="screen">
+      <ToastContainer />
       <div className="screen__content">
         <MdCancel size={24} className="cancel" onClick={onClickHandler} />
         <form className="login">

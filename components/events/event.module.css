@@ -1,0 +1,56 @@
+
+.paidevent{
+	width: 100%;
+	margin: 2rem auto;
+	/* height: 400px; */
+	display: flex;
+	color: #777;
+	flex-direction: row;
+    height: 680px;
+	justify-content: space-between;
+    
+}
+
+.parent{
+    width: 90%;
+	margin: 2rem auto;
+	color: #777;
+}
+
+
+.paidevent h3{
+	margin: 15px 0;
+}
+
+.eventCard{
+	width: 48%;
+	height: 100%;
+	padding: 1.2rem;
+	border-radius: 1.2rem;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.eventCard img{
+	width: 100%;
+}
+
+.heading{
+    font-size: 32px;
+    color: #7E7BB9;
+}
+
+
+@media (max-width: 600px) {
+    .parent{
+        margin-top: 4rem;
+    }
+	.paidevent{
+		width: 100%;
+		flex-direction: column;
+        height: auto;
+	}
+    .eventCard{
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+  }

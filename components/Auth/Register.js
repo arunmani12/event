@@ -4,10 +4,12 @@ import Background from "./Background";
 import { MdCancel } from "react-icons/md";
 import {useState} from 'react'
 import { useRouter } from "next/router";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { validateEmail } from "../../comman";
+
 
 const Register = ({ setShowAuth,setCurrentModel }) => {
-
-  
 
   const [email, setEmail] = useState('');
   const [DOB, setDOB] = useState('');
@@ -23,9 +25,17 @@ const Register = ({ setShowAuth,setCurrentModel }) => {
 
   
   const registerHandler = async () => {
-    if (!email.length>0 || !DOB.length>0) {
-      console.log("Register number or dob must not empty");
+
+    if (!(email.length>0) || !(DOB.length>=10) ||!(collegeName.length>4) || !(Name.length>4)) {
+      if (!validateEmail(email)) {
+        toast("Please enter vaild email");   
+        return;
+      }
+      toast("enter vaild data");
+      return
     }
+
+
     const res = await fetch(`http://localhost:3000/api/register`, {
       method: "POST",
       headers: {
@@ -51,6 +61,7 @@ const Register = ({ setShowAuth,setCurrentModel }) => {
 
   return (
     <div className="screen">
+      <ToastContainer />
       <div className="screen__content">
         <form className="login">
           <BiArrowBack onClick={()=>setCurrentModel('login')} color="#777" fontSize={22} />

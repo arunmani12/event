@@ -84,7 +84,8 @@ body > div{
 	height: 100%;
 }
 
-.screen__background {		
+.screen__background {	
+	overflow: hidden;	
 	position: absolute;
 	top: 0;
 	left: 0;

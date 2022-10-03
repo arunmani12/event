@@ -13,6 +13,12 @@ export default async function handler(req, res) {
     try {
       const { email, DOB, collegeName, Name } = req.body;
 
+      const userIsThere = await User.find({ email });
+
+      if (userIsThere.length>0) {
+        return res.status(401).json({ message: "email is already there" });
+      }
+
       if (!email || !DOB || !collegeName || !Name) {
         res.status(403).json({ message: "Please enter valid fields" });
       }
