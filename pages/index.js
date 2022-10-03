@@ -7,6 +7,7 @@ import NavBar from "../components/NavBar";
 import styles from "../styles/Home.module.css";
 import UpdatePlan from "../components/updateplan/UpdatePlan";
 import Basic from "../components/card/Basic";
+import BasicContainer from "../components/Basic/Basic";
 
 
 export default function Home(props) {
@@ -42,7 +43,8 @@ export default function Home(props) {
       <div className={styles.container}>
         <Head />
         {/* <Main/>  */}
-        <Basic/>
+        {/* <Basic/> */}
+        <BasicContainer/>
       </div>
     </div>
     )

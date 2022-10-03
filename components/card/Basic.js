@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Card.module.css";
 import { SiProtonvpn } from "react-icons/si";
 
-const Basic = () => {
+const Basic = ({width,height}) => {
   return (
     <div
       className={`${styles.Card} ${styles["gradient-bg-welcome"]} ${styles.Basic}`}

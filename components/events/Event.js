@@ -8,9 +8,9 @@ const Event = () => {
     {
      url: "/crypto.svg",
       title: "1. Crypto",
-      quote:
-        "One cartographer does not only understand how to analyse cryptography by old times",
-      author: "Matt Harvey",
+      // quote:
+      //   "One cartographer does not only understand how to analyse cryptography by old times",
+      // author: "Matt Harvey",
       about:
         "Master in decrypting problems in life...?Time to test your technical proficiency...Here's your stage to prove your skills in Engineering...Grab up your seat..and stay tunes for the journey of Decryption of words",
     },

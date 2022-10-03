@@ -9,17 +9,6 @@ const Home = () => {
   return (
     <div>
       <div className={styles.home}>
-        {/* <div className={styles["screen__background"]}>
-          <span
-            className={`${styles["screen__background__shape"]} ${styles["screen__background__shape4"]}`}
-          ></span>
-          <span
-            className={`${styles["screen__background__shape"]} ${styles["screen__background__shape3"]}`}
-          ></span>
-          <span
-            className={`${styles["screen__background__shape"]} ${styles["screen__background__shape2"]}`}
-          ></span>
-        </div> */}
 
         <div className={styles.inside}>
           <div style={{ marginBottom: "1.5rem" }}>
