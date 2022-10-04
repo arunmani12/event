@@ -8,6 +8,7 @@ import styles from "../styles/Home.module.css";
 import UpdatePlan from "../components/updateplan/UpdatePlan";
 import Basic from "../components/card/Basic";
 import BasicContainer from "../components/Basic/Basic";
+import ProContainer from "../components/Basic/Pro";
 
 
 export default function Home(props) {
@@ -57,8 +58,7 @@ export default function Home(props) {
     <NavBar setShowAuth={setShowAuth} />
     <div className={styles.container}>
       <Head />
-      {/* <Main/>  */}
-      <Perimium/>
+      <ProContainer/>
     </div>
   </div>
   )

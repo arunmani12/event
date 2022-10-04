@@ -12,11 +12,12 @@ const Home = () => {
 
         <div className={styles.inside}>
           <div style={{ marginBottom: "1.5rem" }}>
-            <FaChessKing
+            {/* <FaChessKing
               size={144}
               color="#6C63AC"
               style={{ marginBottom: "0.5rem" }}
-            />
+            /> */}
+            <img src="/logo.png" width={144} />
             <p style={{ fontWeight: "bold", fontSize: "32px" }}>
               Techfinity'22
             </p>

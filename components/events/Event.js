@@ -8,9 +8,9 @@ const Event = () => {
     {
      url: "/crypto.svg",
       title: "1. Crypto",
-      // quote:
-      //   "One cartographer does not only understand how to analyse cryptography by old times",
-      // author: "Matt Harvey",
+      quote:
+        `"One cartographer does not only understand how to analyse cryptography by old times"`,
+      author: "Matt Harvey",
       about:
         "Master in decrypting problems in life...?Time to test your technical proficiency...Here's your stage to prove your skills in Engineering...Grab up your seat..and stay tunes for the journey of Decryption of words",
     },
@@ -27,7 +27,7 @@ const Event = () => {
         url: "/presentation.svg",
       title: "1. Paper Presentation",
       quote:
-        "If you don't know what you want to achieve in your presentation your audience never will.",
+        `"If you don't know what you want to achieve in your presentation your audience never will."`,
       author: "Harvey Diamond",
       about:
         "High over your ideas...? Time to implement up your brainy things ahead through presentation and pieces of sheets...Have your stage here to present your brainy stuffs and bag home the price for the best one",
@@ -35,7 +35,28 @@ const Event = () => {
     {
         url: "/programming.svg",
       title: "2. Web Designing",
-      quote: "Websites promote you 24/7: No employee will do that,",
+      quote: `"Websites promote you 24/7: No employee will do that,"`,
+      author: "Paul Cookson",
+      about:
+        "If you think math is hard, try website design! Department of IT is here with yet another creative-amidst-the-techies event.Web designing tests you based on your way with the languages like HTML, CSS, JS , React, etc...",
+    },
+  ];
+
+
+  const nonTechnicalEvents = [
+    {
+        url: "/direction.svg",
+      title: "1.Cooper and the Mystery:-",
+      quote:
+        `"Only a true demigod that has the zealot shall make it to the endgame"`,
+      author: "Someone",
+      about:
+        "come join us on Fandom Quiz - a trick or treat for cine-philes and fanatics like you all...! The quiz will cover fandoms based on books, movies, TV/web series, video games and comics...You do not want to miss out on this, if anything..!",
+    },
+    {
+        url: "/fandom.svg",
+      title: "2.Fandom Quiz",
+      quote: `"Websites promote you 24/7: No employee will do that,"`,
       author: "Paul Cookson",
       about:
         "If you think math is hard, try website design! Department of IT is here with yet another creative-amidst-the-techies event.Web designing tests you based on your way with the languages like HTML, CSS, JS , React, etc...",
@@ -85,11 +106,29 @@ const Event = () => {
             <p>{d.about}</p>
             <br />
             {d.quote && <p>{d.quote}</p>}
-            {d.author && <p>-{d.author}</p>}
-            {<p>Does this scenario ring a bell? Or do your nights seamlessly wander with peculiar realisations and conclusions that keep you awake...?
+            {d.author && <p style={{marginTop:'0.5rem'}}>-{d.author}</p>}
+            {d.title ==="2. Night Owl Quiz"&& <p>Does this scenario ring a bell? Or do your nights seamlessly wander with peculiar realisations and conclusions that keep you awake...?   You're already halfway through Night Owl Quiz... Keep your heads awake to steer clear through this General Knowledge, Aptitude and technical quiz...nothing about the textbooks.</p>}
+            
+          </div>
+        ))}
+      </div>
+    </div>
 
-You're already halfway through Night Owl Quiz... Keep your heads awake to steer clear through this General Knowledge, Aptitude and technical quiz...nothing about the textbooks.</p>}
-           
+
+
+    <div className={styles.parent}>
+        <h3 className={styles.heading}>Non Techinical Events</h3>
+      <div className={styles.paidevent}>
+        {nonTechnicalEvents.map((d, i) => (
+          <div key={i} className={styles.eventCard}>
+            <img src={d.url} />
+            <h3>{d.title}</h3>
+            <p>{d.about}</p>
+            <br />
+            {d.quote && <p>{d.quote}</p>}
+            {d.author && <p style={{marginTop:'0.5rem'}}>-{d.author}</p>}
+            {d.title ==="2. Night Owl Quiz"&& <p>Does this scenario ring a bell? Or do your nights seamlessly wander with peculiar realisations and conclusions that keep you awake...?   You're already halfway through Night Owl Quiz... Keep your heads awake to steer clear through this General Knowledge, Aptitude and technical quiz...nothing about the textbooks.</p>}
+            
           </div>
         ))}
       </div>

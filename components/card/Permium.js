@@ -10,7 +10,7 @@ const Perimium = () => {
       <div style={{width:'100%'}}>
         <div className={styles.inside}>
           <AiFillPropertySafety fontSize={32} />
-          <p style={{ marginLeft: "10px" }}>Pro Plan</p>
+          <p style={{ marginLeft: "10px" }}>Pro</p>
         </div>
 
         <h3 className={styles.id}>AAMEC_IT_01</h3>

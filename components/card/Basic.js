@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Card.module.css";
 import { SiProtonvpn } from "react-icons/si";
 
-const Basic = ({width,height}) => {
+const Basic = () => {
   return (
     <div
       className={`${styles.Card} ${styles["gradient-bg-welcome"]} ${styles.Basic}`}
@@ -10,7 +10,7 @@ const Basic = ({width,height}) => {
       <div style={{width:'100%'}}>
         <div className={styles.inside}>
           <SiProtonvpn fontSize={32} />
-          <p style={{ marginLeft: "10px" }}>Basic Plan</p>
+          <p style={{ marginLeft: "10px" }}>Basic</p>
         </div>
 
         <h3 className={styles.id}>AAMEC_IT_01</h3>
