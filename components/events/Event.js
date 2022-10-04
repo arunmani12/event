@@ -45,8 +45,8 @@ const Event = () => {
 
   const nonTechnicalEvents = [
     {
-        url: "/direction.svg",
-      title: "1.Cooper and the Mystery:-",
+        url: "/fandom.svg",
+      title: "1.Fandom Quiz:-",
       quote:
         `"Only a true demigod that has the zealot shall make it to the endgame"`,
       author: "Someone",
@@ -54,12 +54,12 @@ const Event = () => {
         "come join us on Fandom Quiz - a trick or treat for cine-philes and fanatics like you all...! The quiz will cover fandoms based on books, movies, TV/web series, video games and comics...You do not want to miss out on this, if anything..!",
     },
     {
-        url: "/fandom.svg",
-      title: "2.Fandom Quiz",
-      quote: `"Websites promote you 24/7: No employee will do that,"`,
-      author: "Paul Cookson",
+        url: "/direction.svg",
+      title: "2.Cooper and the Mystery",
+      quote: `"Mysteries abound where most seek for answers"`,
+      author: "Ray Bradbury",
       about:
-        "If you think math is hard, try website design! Department of IT is here with yet another creative-amidst-the-techies event.Web designing tests you based on your way with the languages like HTML, CSS, JS , React, etc...",
+        "Get your detective glasses ready to solve mysteries not only using logic but also cryptographic techniques to decode Mr.Cooper's secret and figure out the prime suspect...Like Sherlock would say, it's your turn to know what other people don't know",
     },
   ];
 
