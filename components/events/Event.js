@@ -133,6 +133,32 @@ const Event = () => {
         ))}
       </div>
     </div>
+
+
+
+
+
+    <section className="contact-area" id="contact">
+        <div className="container-footer">
+            <div className="row">
+                <div className="col-lg-6 offset-lg-3">
+                    <div className="contact-content text-center">
+                        <a href="#"><img style={{width:'8rem'}} src="/logo.png" alt="logo"/></a>
+                        <p>Anjali ammal mahalingam engineering college | Information Technology</p>
+                        <div className="hr"></div>
+                        <h6>Kovilvenni | Thanjavur - Nedamangalam road</h6>
+                        <h6>+91 91508 30225<span>|</span>+91 86104 35514</h6>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>Copyright &copy; 2019 | All Rights Reserved.</p>
+    </footer>
+
+
     </>
   );
 };

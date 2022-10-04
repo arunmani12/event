@@ -1,12 +1,10 @@
 import React from "react";
 import LoginHolder from "../components/Auth/LoginHolder";
 import HomeContainer from "../components/home/Home";
-import Perimium from "../components/card/Permium";
 import Head from "../components/Head";
 import NavBar from "../components/NavBar";
 import styles from "../styles/Home.module.css";
 import UpdatePlan from "../components/updateplan/UpdatePlan";
-import Basic from "../components/card/Basic";
 import BasicContainer from "../components/Basic/Basic";
 import ProContainer from "../components/Basic/Pro";
 
@@ -43,8 +41,6 @@ export default function Home(props) {
       <NavBar setShowAuth={setShowAuth} />
       <div className={styles.container}>
         <Head />
-        {/* <Main/>  */}
-        {/* <Basic/> */}
         <BasicContainer/>
       </div>
     </div>

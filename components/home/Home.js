@@ -29,12 +29,12 @@ const Home = () => {
             to gear up your shuttles of talent...Get ready folks..
           </p>
 
-          <button
+          {/* <button
             style={{ marginTop: "1rem" }}
             className="button login__submit"
           >
             <span className="button__text">Login</span>
-          </button>
+          </button> */}
         </div>
       </div>
       <Event/>
