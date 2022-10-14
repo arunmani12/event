@@ -1,14 +1,71 @@
 import React from "react";
-import { useRouter } from "next/router";
 import Event from "../events/Event";
 import styles from "./Basic.module.css";
 import Basic from "../card/Basic";
-import Perimium from "../card/Permium";
-import { BiRupee } from "react-icons/bi";
+import { url } from "../../global";
+
+
+function loadScript(src) {
+  return new Promise((resolve) => {
+    const script = document.createElement("script");
+    script.src = src;
+    script.onload = () => {
+      resolve(true);
+    };
+    script.onerror = () => {
+      resolve(false);
+    };
+    document.body.appendChild(script);
+  });
+}
 
 
 const BasicContainer = ({ user }) => {
-  const router = useRouter();
+
+
+  async function displayRazerpay(plan) {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+
+    const data = await fetch(`${url}/api/razorpay`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: user.Name,
+        email: user.email,
+        plan: plan,
+      }),
+    }).then((t) => t.json());
+
+
+    let options = {
+      key: "rzp_test_DyO1hiZxeHObP6",
+      currency: data.currency,
+      amount: data.amount.toString(),
+      order_id: data.id,
+      name: "pay event",
+      description: "Thank you for approch over applying event",
+      // image: "http://localhost:1337/logo.svg",
+      handler: function () {
+        router.reload("/");
+      },
+      prefill: {
+        name: user.Name,
+        email: user.email,
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  }
+
 
   return (
     <div>
@@ -18,7 +75,7 @@ const BasicContainer = ({ user }) => {
        
 
       <div className={styles.insideCard}>
-        <Basic width='100%' height='16rem'/>
+        <Basic user={user} width='100%' height='16rem'/>
       </div>
 
         <div className={styles.insideCard}>
@@ -30,7 +87,17 @@ const BasicContainer = ({ user }) => {
             for what are you waiting for...?..Time for the Bull's Eye
             moment...Boost up Techie..!
           </p>
+          <button
+            type="button"
+            style={{ width:'50%' }}
+            className="button login__submit"
+            onClick={() => displayRazerpay("pro")}
+          >
+            <span className="button__text">upgrade to pro $100</span>
+        </button>
         </div>
+
+
       </div>
 
       <Event />

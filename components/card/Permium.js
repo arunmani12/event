@@ -2,7 +2,19 @@ import React from "react";
 import styles from "./Card.module.css";
 import {AiFillPropertySafety} from "react-icons/ai"
 
-const Perimium = () => {
+const Perimium = ({user}) => {
+
+  const calcId = () =>{
+    if(user.planId){
+      var id = user.planId.toString()
+      if(id.length===1){
+        id = 0 + id
+      }
+      return id
+    }
+    return '01'
+  }
+
   return (
     <div
       className={`${styles.Card} ${styles["eth-card"]} ${styles.Basic}`}
@@ -13,8 +25,8 @@ const Perimium = () => {
           <p style={{ marginLeft: "10px" }}>Pro</p>
         </div>
 
-        <h3 className={styles.id}>AAMEC_IT_01</h3>
-        <h3 className={styles.name}>Arunmani</h3>
+        <h3 className={styles.id}>AAMEC_IT_{calcId()}</h3>
+        <h3 className={styles.name}>{user.Name}</h3>
       </div>
 
       <div>

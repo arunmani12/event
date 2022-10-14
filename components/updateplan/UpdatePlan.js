@@ -21,7 +21,6 @@ function loadScript(src) {
 const UpdatePlan = ({ user }) => {
   const router = useRouter();
 
-  console.log(user);
 
   async function displayRazerpay(plan) {
     const res = await loadScript(

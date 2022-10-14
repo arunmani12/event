@@ -18,7 +18,7 @@ const ProContainer = ({ user }) => {
        
 
       <div className={styles.insideCard}>
-        <Perimium/>
+        <Perimium user={user}/>
       </div>
 
         <div className={styles.insideCard}>

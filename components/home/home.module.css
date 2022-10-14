@@ -5,6 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
 .inside{
@@ -12,7 +14,6 @@
     z-index: 50;
     margin-top: -20px;
     text-align: center;
-	/* box-shadow: 5px 10px 20px 1px rgb(0 0 0 / 25%); */
 
     color: #777;
     font-weight: 500;
@@ -29,6 +30,12 @@
 	.inside{
 		width: 90%;
 		padding: 5%;
+		box-shadow: 5px 10px 20px 1px rgb(0 0 0 / 25%);
+	}
+	.home{
+		height: 50vh;
+		margin-top: 2rem;
+		margin-bottom: -2rem;
 	}
   }
 

@@ -4,9 +4,10 @@ import HomeContainer from "../components/home/Home";
 import Head from "../components/Head";
 import NavBar from "../components/NavBar";
 import styles from "../styles/Home.module.css";
-import UpdatePlan from "../components/updateplan/UpdatePlan";
 import BasicContainer from "../components/Basic/Basic";
 import ProContainer from "../components/Basic/Pro";
+import { url } from "../global";
+
 
 
 export default function Home(props) {
@@ -17,66 +18,46 @@ export default function Home(props) {
   if(props.status && !props.user.user[0].plan){
      return (
       <div style={{width:'100%'}}>
-       {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
-        <NavBar setShowAuth={setShowAuth} />
-        <UpdatePlan user={props.user.user[0]}/>
-      </div>
-     )
-  }
-
-  if (!props.status) {
-    return (
-      <div style={{width:'100%'}}>
-       {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
-        <NavBar setShowAuth={setShowAuth} />
-        <HomeContainer/>
-      </div>
-    );
-  }
-
-  if(props.status && props.user.user[0].plan==='basic'){
-    return (
-      <div style={{width:'100%'}}>
       {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
-      <NavBar setShowAuth={setShowAuth} />
+      <NavBar setShowAuth={setShowAuth} logedIn={true}/>
       <div className={styles.container}>
         <Head />
-        <BasicContainer/>
+        <BasicContainer user={props.user.user[0]}/>
       </div>
     </div>
     )
- }
+  }
+
+
+
 
  if(props.status && props.user.user[0].plan==='pro'){
   return (
     <div style={{width:'100%'}}>
-    {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
-    <NavBar setShowAuth={setShowAuth} />
+    {showAuth && <LoginHolder setShowAuth={setShowAuth} logedIn={true}/>}
+    <NavBar setShowAuth={setShowAuth} logedIn={true}/>
     <div className={styles.container}>
       <Head />
-      <ProContainer/>
+      <ProContainer user={props.user.user[0]}/>
     </div>
   </div>
   )
 }
 
   return (
-    <div style={{width:'100%'}}>
-      {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
-      <NavBar setShowAuth={setShowAuth} />
-      <div className={styles.container}>
-        <Head />
+      <div style={{width:'100%'}}>
+       {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
+        <NavBar setShowAuth={setShowAuth} />
+        <HomeContainer/>
       </div>
-    </div>
   );
 }
 
 export async function getServerSideProps(ctx) {
   const jwt = ctx.req.cookies.OursiteJWT;
-  // console.log(jwt);
 
   if (jwt) {
-    const data = await fetch(`http://localhost:3000/api/dashboard`, {
+    const data = await fetch(`${url}/api/dashboard`, {
       headers: {
         method: "GET",
         "Content-Type": "application/json",

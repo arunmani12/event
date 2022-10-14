@@ -7,9 +7,10 @@ import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { validateEmail } from "../../comman";
+import { url } from "../../global";
 
 
-const Register = ({ setShowAuth,setCurrentModel }) => {
+const Register = ({ setShowAuth,setCurrentModel ,setLoading}) => {
 
   const [email, setEmail] = useState('');
   const [DOB, setDOB] = useState('');
@@ -35,8 +36,8 @@ const Register = ({ setShowAuth,setCurrentModel }) => {
       return
     }
 
-
-    const res = await fetch(`http://localhost:3000/api/register`, {
+    setLoading(true)
+    const res = await fetch(`${url}/api/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,11 +51,11 @@ const Register = ({ setShowAuth,setCurrentModel }) => {
     });
     let response = await res.json();
     if (response.message == "Success!") {
-       console.log(response)
+       setLoading(false)
 	     router.reload()
-
     } else {
-      console.log('please check data')
+      setLoading(false)
+      toast('please check data')
     }
   };
 

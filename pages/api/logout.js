@@ -18,6 +18,6 @@ export default async function handler(req, res) {
 
     res.setHeader("Set-Cookie", serialised);
 
-    res.status(200).json({ message: "Successfuly logged out!" });
+    res.status(200).json({ message: "Success" });
   }
 }

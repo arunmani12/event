@@ -20,12 +20,19 @@ export default async function handler(req, res) {
       }
 
       if (!email || !DOB || !collegeName || !Name) {
-        res.status(403).json({ message: "Please enter valid fields" });
+        return res.status(403).json({ message: "Please enter valid fields" });
       }
 
-      const user = new User({
+      var users = await User.find();
+
+      var count = users.length
+
+      
+      const user = await new User({
         ...req.body,
+        planId:count + 1
       });
+
 
       await user.save();
 
@@ -46,6 +53,7 @@ export default async function handler(req, res) {
 
       res.status(200).json({ user ,message: "Success!"});
     } catch (e) {
+      console.log(e)
       res.status(401).json({ message: "something went to wrong" });
     }
   }

@@ -23,13 +23,7 @@ export default async function handler(req, res) {
 	 
 	  const currency = 'INR'
 
-      const plan = req.body.plan
-
-      let amount = 210
-
-      if(plan === 'basic'){
-        amount = 110
-      }
+      let amount = 110
 
       const options = {
         amount: amount * 100,

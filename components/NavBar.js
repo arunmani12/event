@@ -1,28 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./NavBar.module.css";
 import { AiOutlineLogin } from "react-icons/ai";
+import { useRouter } from "next/router";
+import { url } from "../global";
+import Loader from "./Loader/Loader";
 
-const NavBar = ({ setShowAuth }) => {
 
+
+const NavBar = ({ setShowAuth,logedIn=false }) => {
+
+  const [loading,setLoading] = useState(false)
+
+  const router = useRouter();
   
-  let logoutHandler = async() =>{
-   
-}
+  const logoutHandler = async() =>{
+    setLoading(true)
+    const res = await fetch(`${url}/api/logout`);
+    let response = await res.json();
+    if (response.message == "Success") {
+      setLoading(false)
+      router.reload();
+    } else {
+      setLoading(false)
+      toast("something went to wrong");
+    }
+  }
 
   return (
+    <>
+    {loading && <Loader/>}
     <div className={styles.nav}>
-      <AiOutlineLogin
+      {/* <AiOutlineLogin
         onClick={() => setShowAuth((prv) => !prv)}
         cursor="pointer"
         color="#6C63AC"
-      />{" "}
-      <h2
+      />{" "} */}
+      {!logedIn && <h2
         style={{ cursor: "pointer", marginLeft: "0.4rem" }}
         onClick={() => setShowAuth((prv) => !prv)}
       >
         Login
+      </h2>}
+      {
+        logedIn && <h2
+        style={{ cursor: "pointer", marginLeft: "0.4rem" }}
+        // onClick={() => setShowAuth((prv) => !prv)}
+        onClick={logoutHandler}
+      >
+        Logout
       </h2>
+      }
     </div>
+    </>
   );
 };
 

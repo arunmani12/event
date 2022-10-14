@@ -6,8 +6,13 @@ import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { validateEmail } from "../../comman";
+import { url } from "../../global";
 
-const Login = ({ setShowAuth, setCurrentModel }) => {
+
+
+const Login = ({ setShowAuth, setCurrentModel,setLoading }) => {
+
+
   const router = useRouter();
 
   const [email, setEmail] = useState("");
@@ -16,8 +21,6 @@ const Login = ({ setShowAuth, setCurrentModel }) => {
   const onClickHandler = () => {
     setShowAuth((prv) => !prv);
   };
-
-  
 
   const loginHandler = async () => {
     if (!(email.length > 0) || !(DOB.length > 9)) {
@@ -28,7 +31,8 @@ const Login = ({ setShowAuth, setCurrentModel }) => {
       toast("Register number or dob must not empty");
       return
     }
-    const res = await fetch(`http://localhost:3000/api/login`, {
+    setLoading(true)
+    const res = await fetch(`${url}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,10 +44,11 @@ const Login = ({ setShowAuth, setCurrentModel }) => {
     });
     let response = await res.json();
     if (response.message == "Success!") {
-      console.log(response);
+      setLoading(false)
       router.reload();
     } else {
-      toast("Please check the data");
+      setLoading(false)
+      toast("email or dob miss match");
     }
   };
 
