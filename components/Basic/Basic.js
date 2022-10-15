@@ -93,7 +93,7 @@ const BasicContainer = ({ user }) => {
             className="button login__submit"
             onClick={() => displayRazerpay("pro")}
           >
-            <span className="button__text">upgrade to pro $100</span>
+            <span className="button__text">upgrade to pro  &nbsp;&#8377;110</span>
         </button>
         </div>
 

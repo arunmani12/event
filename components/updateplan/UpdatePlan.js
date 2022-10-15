@@ -44,7 +44,6 @@ const UpdatePlan = ({ user }) => {
       }),
     }).then((t) => t.json());
 
-    console.log(data);
 
     let options = {
       key: "rzp_test_DyO1hiZxeHObP6",
@@ -54,7 +53,7 @@ const UpdatePlan = ({ user }) => {
       name: "pay event",
       description: "Thank you for approch over applying event",
       // image: "http://localhost:1337/logo.svg",
-      handler: function (response) {
+      handler: function () {
         router.reload("/");
       },
       prefill: {
