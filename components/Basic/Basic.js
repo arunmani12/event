@@ -84,7 +84,7 @@ const BasicContainer = ({ user }) => {
             {" "}
             Basic techie is able to access all the available Technical and
             Non-Technical events except Paper Presentation and Web Design...So
-            for what are you waiting for...?..Time for the Bull's Eye
+            for what are you waiting for...?..Time for the Bull&apos;s Eye
             moment...Boost up Techie..!
           </p>
           <button
