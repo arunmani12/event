@@ -1,17 +1,14 @@
 import dbConnect from "../../db/connectDb";
-import User from "../../models/User";
-import { sign } from "jsonwebtoken";
-import { serialize } from "cookie";
 import Razorpay from "razorpay";
 import shortid from 'shortid'
 
 
 dbConnect();
-const secret = "arunmani";
+
 
 const razorpay = new Razorpay({
-  key_id: "rzp_test_DyO1hiZxeHObP6",
-  key_secret: "0htjDY4Pzz60X4Iw5Bi1CGle",
+  key_id: "rzp_live_hZtN2aKvtd1Z0i",
+  key_secret: "aC7cE4t7CJXHEbltnMueDjUv",
 });
 
 export default async function handler(req, res) {
@@ -36,6 +33,7 @@ export default async function handler(req, res) {
        }
  
         const response = await razorpay.orders.create(options)
+        console.log(response)
 
         res.json({
 			id: response.id,

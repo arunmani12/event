@@ -45,6 +45,8 @@ const BasicContainer = ({ user }) => {
       }),
     }).then((t) => t.json());
 
+    console.log(data)
+
 
     let options = {
       key: "rzp_live_hZtN2aKvtd1Z0i",
