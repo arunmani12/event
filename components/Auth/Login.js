@@ -83,7 +83,7 @@ const Login = ({ setShowAuth, setCurrentModel,setLoading }) => {
           >
             <span className="button__text">Login</span>
           </button>
-          <p className="switch">Don't have Account ?</p>
+          <p className="switch">Don&apos;t have Account ?</p>
           <button
             type="button"
             style={{ margin: "0" }}

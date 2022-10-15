@@ -27,7 +27,7 @@ const ProContainer = ({ user }) => {
             {" "}
             Pro techie is able to access all the available Technical and
             Non-Technical events...So for what are you waiting for...?..Time for
-            the Bull's Eye moment...Boost up Techie..!
+            the Bull&apos;s Eye moment...Boost up Techie..!
           </p>
         </div>
       </div>

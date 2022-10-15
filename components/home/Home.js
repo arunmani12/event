@@ -13,7 +13,7 @@ const Home = () => {
           <div style={{ marginBottom: "1.5rem" }}>
             <img src="/logo.png" width={144} />
             <p style={{ fontWeight: "bold", fontSize: "32px" }}>
-              Techfinity'22
+              Techfinity&apos;22
             </p>
           </div>
 
