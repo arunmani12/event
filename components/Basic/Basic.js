@@ -47,7 +47,7 @@ const BasicContainer = ({ user }) => {
 
 
     let options = {
-      key: "rzp_test_DyO1hiZxeHObP6",
+      key: "rzp_live_hZtN2aKvtd1Z0i",
       currency: data.currency,
       amount: data.amount.toString(),
       order_id: data.id,
