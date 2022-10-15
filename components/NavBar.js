@@ -16,6 +16,7 @@ const NavBar = ({ setShowAuth,logedIn=false }) => {
   const logoutHandler = async() =>{
     setLoading(true)
     const res = await fetch(`${url}/api/logout`);
+    document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
     let response = await res.json();
     if (response.message == "Success") {
       setLoading(false)
