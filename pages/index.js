@@ -40,6 +40,7 @@ export default function Home(props) {
   return (
     <div style={{ width: "100%" }}>
       {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
+      <Head />
       <NavBar setShowAuth={setShowAuth} />
       <HomeContainer />
     </div>

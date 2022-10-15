@@ -4,9 +4,9 @@ import React from "react";
 const HeadComponenet = () => {
   return (
     <Head>
-      <title>Event</title>
+      <title>Techfinity'22</title>
       <meta name="description" content="our event" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/logo.png" />
     </Head>
   );
 };

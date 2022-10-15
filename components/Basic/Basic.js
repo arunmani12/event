@@ -51,9 +51,9 @@ const BasicContainer = ({ user }) => {
       currency: data.currency,
       amount: data.amount.toString(),
       order_id: data.id,
-      name: "pay event",
+      name: "Techfinity'22",
       description: "Thank you for approch over applying event",
-      // image: "http://localhost:1337/logo.svg",
+      image: "/logo.png",
       handler: function () {
         router.reload("/");
       },
