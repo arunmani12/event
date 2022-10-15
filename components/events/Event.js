@@ -107,7 +107,7 @@ const Event = () => {
             <br />
             {d.quote && <p>{d.quote}</p>}
             {d.author && <p style={{marginTop:'0.5rem'}}>-{d.author}</p>}
-            {d.title ==="2. Night Owl Quiz"&& <p>Does this scenario ring a bell? Or do your nights seamlessly wander with peculiar realisations and conclusions that keep you awake...?   You're already halfway through Night Owl Quiz... Keep your heads awake to steer clear through this General Knowledge, Aptitude and technical quiz...nothing about the textbooks.</p>}
+            {d.title ==="2. Night Owl Quiz"&& <p>Does this scenario ring a bell? Or do your nights seamlessly wander with peculiar realisations and conclusions that keep you awake...?   You&apos;re already halfway through Night Owl Quiz... Keep your heads awake to steer clear through this General Knowledge, Aptitude and technical quiz...nothing about the textbooks.</p>}
             
           </div>
         ))}
@@ -127,7 +127,7 @@ const Event = () => {
             <br />
             {d.quote && <p>{d.quote}</p>}
             {d.author && <p style={{marginTop:'0.5rem'}}>-{d.author}</p>}
-            {d.title ==="2. Night Owl Quiz"&& <p>Does this scenario ring a bell? Or do your nights seamlessly wander with peculiar realisations and conclusions that keep you awake...?   You're already halfway through Night Owl Quiz... Keep your heads awake to steer clear through this General Knowledge, Aptitude and technical quiz...nothing about the textbooks.</p>}
+            {d.title ==="2. Night Owl Quiz"&& <p>Does this scenario ring a bell? Or do your nights seamlessly wander with peculiar realisations and conclusions that keep you awake...?   You&apos;re already halfway through Night Owl Quiz... Keep your heads awake to steer clear through this General Knowledge, Aptitude and technical quiz...nothing about the textbooks.</p>}
             
           </div>
         ))}
