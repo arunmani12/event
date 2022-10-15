@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
 
-// let DB_URL="mongodb+srv://arunmani:9787480892@cluster0.o9yhm.mongodb.net/event?retryWrites=true&w=majority"
+let DB_URL="mongodb+srv://arunmani:9787480892@cluster0.o9yhm.mongodb.net/event?retryWrites=true&w=majority"
 
 
 function dbConnect() {
-     mongoose.connect(process.env.DB_URL, {
+     mongoose.connect(DB_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
