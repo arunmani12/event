@@ -5,12 +5,13 @@
     margin: 0 auto;
     justify-content: space-between;
     /* height: calc(50vh - 120px); */
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     padding: 2%;
     line-height: 1.5;
-    color: rgb(103, 103, 103);
+    color: #fff;
     border-radius: 5%;
+    /* padding-top: 6rem; */
     margin-bottom: 5rem;
 }
 

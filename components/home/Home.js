@@ -4,24 +4,22 @@ import Event from "../events/Event";
 
 
 
-const Home = () => {
+const Home = ({setShowAuth}) => {
   return (
     <div>
       <div className={styles.home}>
 
         <div className={styles.inside}>
-          <div style={{ marginBottom: "1.5rem" }}>
-            <img src="/logo.png" width={144} />
-            <p style={{ fontWeight: "bold", fontSize: "32px" }}>
-              Techfinity&apos;22
-            </p>
-          </div>
-
+          <p className="homeHeading">Technify&apos;22</p>
           <p>
             Techies from the Department of IT feel proud to benchmark you all
             over this massive stage of Technical and Non-Technical world...Time
             to gear up your shuttles of talent...Get ready folks..
           </p>
+          <button onClick={()=>setShowAuth(prv=>!prv)}>Login</button>
+        </div>
+        <div style={{ marginBottom: "1.5rem" }}>
+            <img src="/logo.png" />
         </div>
       </div>
       <Event/>

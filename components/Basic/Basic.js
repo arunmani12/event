@@ -70,7 +70,7 @@ const BasicContainer = ({ user }) => {
 
 
   return (
-    <div>
+    <div style={{paddingTop:'10rem'}}>
   
 
       <div className={styles.update}>

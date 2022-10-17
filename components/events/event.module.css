@@ -4,10 +4,10 @@
 	margin: 2rem auto;
 	/* height: 400px; */
 	display: flex;
-	color: #777;
+	color: #fff;
 	flex-direction: row;
 	margin-bottom: 5rem;
-    height: 680px;
+    height: 830px;
 	justify-content: space-between;
     
 }
@@ -15,12 +15,15 @@
 .parent{
     width: 90%;
 	margin: 2rem auto;
-	color: #777;
 }
+
+
 
 
 .paidevent h3{
 	margin: 15px 0;
+	font-weight: 400;
+	color:  rgb(232, 51, 99);
 }
 
 .eventCard{
@@ -29,7 +32,33 @@
 	padding: 1.3rem;
 	border-radius: 1.2rem;
 	/* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+	background: rgba(239, 239, 239, 0.06);
+    backdrop-filter: blur(140px);
 	box-shadow: 5px 10px 20px 1px rgb(0 0 0 / 25%);
+
+	font-size: clamp(0.875rem, 0.787rem + 0.376vw, 1.125rem);
+    line-height: 140%;
+    color: rgb(148, 154, 173);
+    letter-spacing: 0.02em;
+    font-weight: 500;
+	position: relative;
+}
+
+.plan{
+	background-color:rgb(232, 51, 99);
+	border: 1px solid rgb(232, 51, 99);
+	position: absolute;
+	bottom: 1.3rem;
+	display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    border-radius: 30px;
+    height: 28px;
+    width: 80px;
+	color: white;
+    margin-top: 1rem;
 }
 
 .eventCard img{
@@ -54,5 +83,6 @@
     .eventCard{
         width: 100%;
         margin-bottom: 2rem;
+		padding-bottom: 70px;
     }
   }

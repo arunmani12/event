@@ -11,7 +11,7 @@ const ProContainer = ({ user }) => {
   const router = useRouter();
 
   return (
-    <div>
+    <div style={{paddingTop:'10rem'}}>
   
 
       <div className={styles.update}>

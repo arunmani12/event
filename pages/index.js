@@ -42,7 +42,7 @@ export default function Home(props) {
       {showAuth && <LoginHolder setShowAuth={setShowAuth} />}
       <Head />
       <NavBar setShowAuth={setShowAuth} />
-      <HomeContainer />
+      <HomeContainer setShowAuth={setShowAuth} />
     </div>
   );
 }
