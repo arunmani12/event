@@ -30,7 +30,7 @@ const Basic = ({user}) => {
       </div>
 
       <div>
-        <p>Anjali ammal engeering college</p>
+        <p>Anjalai Ammal Mahalingam Engineering College</p>
       </div>
     </div>
   );
