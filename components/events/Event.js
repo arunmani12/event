@@ -71,7 +71,7 @@ const Event = () => {
 
   const nonTechnicalEventsTwo = [
     {
-        url: "/fandom.svg",
+        url: "/connection.svg",
       title: "3.Juncture (Connection)",
       quote:
         `"Juncture" is a medley of Fantasy concepts and elusive puzzles. Approach the questions from a entertainment point of view and be able to show off your entertainment proficiency.Keep in mind to look at the bigger picture in order to piece it together...Good Luck...!`,
@@ -80,7 +80,7 @@ const Event = () => {
       plan:'basic'
     },
     {
-        url: "/direction.svg",
+        url: "/acting.svg",
       title: "4. Mono Effet(Mono Acting)",
       quote: `"Acting is not about being someone different. It's finding the similarity in what is apparently different, then finding myself in there."`,
       author: "Meryl Streep",
@@ -195,7 +195,7 @@ const Event = () => {
                         <a href="#"><img style={{width:'8rem'}} src="/logo.png" alt="logo"/></a>
                         <p>Anjalai Ammal Mahalingam Engineering College | Information Technology</p>
                         <div className="hr"></div>
-                        <h6>Kovilvenni | Thanjavur - Nedamangalam road</h6>
+                        <h6>Kovilvenni | Thanjavur - nagapattinam highway</h6>
                         <h6>Event queries +91 91508 30225<span>|</span>Technical queries +91 86104 35514</h6>                        
                     </div>
                 </div>
