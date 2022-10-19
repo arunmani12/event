@@ -26,6 +26,10 @@
 	color:  rgb(232, 51, 99);
 }
 
+.paidevent h3{
+	text-align:start;
+}
+
 .eventCard{
 	width: 48%;
 	height: 100%;
@@ -46,8 +50,10 @@
 }
 
 .plan{
-	background-color:rgb(232, 51, 99);
-	border: 1px solid rgb(232, 51, 99);
+	/* background-color:rgb(232, 51, 99); */
+	/* border: 1px solid rgb(232, 51, 99); */
+	background: transparent;
+	border: transparent;
 	position: absolute;
 	bottom: 1.3rem;
 	display: inline-flex;
@@ -58,6 +64,7 @@
     border-radius: 30px;
     height: 28px;
     width: 80px;
+	cursor:text;
 	color: white;
     margin-top: 1rem;
 }

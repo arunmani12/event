@@ -4,7 +4,6 @@ import styles from "./Basic.module.css";
 import Basic from "../card/Basic";
 import { url } from "../../global";
 
-
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -19,10 +18,7 @@ function loadScript(src) {
   });
 }
 
-
 const BasicContainer = ({ user }) => {
-
-
   async function displayRazerpay(plan) {
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -45,8 +41,7 @@ const BasicContainer = ({ user }) => {
       }),
     }).then((t) => t.json());
 
-    console.log(data)
-
+    console.log(data);
 
     let options = {
       key: "rzp_live_hZtN2aKvtd1Z0i",
@@ -68,41 +63,51 @@ const BasicContainer = ({ user }) => {
     paymentObject.open();
   }
 
-
   return (
-    <div style={{paddingTop:'10rem'}}>
-  
+    <div style={{ paddingTop: "10rem" }}>
 
       <div className={styles.update}>
-       
-
-      <div className={styles.insideCard}>
-        <Basic user={user} width='100%' height='16rem'/>
-      </div>
+        <div className={styles.insideCard}>
+          <Basic user={user} width="100%" height="16rem" />
+        </div>
 
         <div className={styles.insideCard}>
-          <h2>Basic :-</h2>
-          <p>
-            {" "}
-            Basic techie is able to access all the available Technical and
-            Non-Technical events except Paper Presentation and Web Design...So
-            for what are you waiting for...?..Time for the Bull&apos;s Eye
-            moment...Boost up Techie..!
-          </p>
-          <button
+          <h2>My events :-</h2>
+           {!user.events.length  ?<>
+              <p>Please scroll down and register for individual events (Basic) by clicking register button</p>
+              <p>limit:3</p>
+           </>:
+           <>
+              <p>limit:3</p>
+              {user.events.map((d,i)=><p key={d}>{i+1 +"."+" "+ d}</p>)}
+           </>}
+        </div>
+      </div>
+
+      <div className={styles.info}>
+        <h3>Please Note</h3>
+
+        <p>BASIC -  Basic techie is able to access all the available Technical and
+          Non-Technical events except Paper Presentation and Web Design </p>
+
+        <hr style={{margin:'1rem 0'}}/>
+        
+        <p>PRO -  Pro techie is able to access all the available Technical and
+          Non-Technical events including Paper Presentation and Web Design </p>
+
+        <button
             type="button"
-            style={{ width:'50%' }}
+            style={{ width: "auto",marginTop:'1rem' }}
             className="button login__submit"
             onClick={() => displayRazerpay("pro")}
           >
-            <span className="button__text">upgrade to pro  &nbsp;&#8377;110</span>
-        </button>
-        </div>
-
-
+            <span className="button__text">
+              upgrade to pro &nbsp;&#8377;110
+            </span>
+          </button>
       </div>
 
-      <Event />
+      <Event user={user}/>
     </div>
   );
 };

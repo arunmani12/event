@@ -8,7 +8,8 @@ const userModel = new Schema({
     collegeName:{type: String, required: true},
     orderId:{type: String},
     plan:{type:String},
-    planId:{type:Number}
+    planId:{type:Number},
+    events:[String]
 },
 { timestamps: true })
 

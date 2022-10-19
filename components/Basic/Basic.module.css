@@ -12,7 +12,7 @@
     color: #fff;
     border-radius: 5%;
     /* padding-top: 6rem; */
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
 }
 
 .update h2{
@@ -35,7 +35,26 @@
     margin-top: 1.5rem;
 }
 
+.info{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #777;
+    width: 86%;
+    /* height: 10rem; */
+    margin: 0 auto;
+    margin-bottom: 4rem;
+}
 
+.info h3{
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.info p{
+    line-height: 1.5rem;
+}
 
 @media (max-width: 600px) {
 

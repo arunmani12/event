@@ -1,18 +1,17 @@
 import React from "react";
-import { useRouter } from "next/router";
+
 import Event from "../events/Event";
 import styles from "./Basic.module.css";
-import Basic from "../card/Basic";
 import Perimium from "../card/Permium";
 
 
 
 const ProContainer = ({ user }) => {
-  const router = useRouter();
+  
 
   return (
     <div style={{paddingTop:'10rem'}}>
-  
+
 
       <div className={styles.update}>
        
@@ -22,17 +21,19 @@ const ProContainer = ({ user }) => {
       </div>
 
         <div className={styles.insideCard}>
-          <h2>Pro :-</h2>
-          <p>
-            {" "}
-            Pro techie is able to access all the available Technical and
-            Non-Technical events...So for what are you waiting for...?..Time for
-            the Bull&apos;s Eye moment...Boost up Techie..!
-          </p>
+        <h2>My events :-</h2>
+           {!user.events.length  ?<>
+              <p>Please scroll down and register for individual events (Basic) by clicking register button</p>
+              <p>limit:3</p>
+           </>:
+           <>
+              <p>limit:3</p>
+              {user.events.map((d,i)=><p key={d}>{i+1 +"."+" "+ d}</p>)}
+           </>}
         </div>
       </div>
 
-      <Event />
+      <Event user={user}/>
     </div>
   );
 };

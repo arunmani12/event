@@ -10,7 +10,7 @@ const Home = ({setShowAuth}) => {
       <div className={styles.home}>
 
         <div className={styles.inside}>
-          <p className="homeHeading">Technify&apos;22</p>
+          <p className="homeHeading">Techfinity&apos;22</p>
           <p>
             Techies from the Department of IT feel proud to benchmark you all
             over this massive stage of Technical and Non-Technical world...Time
