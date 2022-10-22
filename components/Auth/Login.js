@@ -54,7 +54,7 @@ const Login = ({ setShowAuth, setCurrentModel,setLoading }) => {
 
   return (
     <div className="screen">
-      <ToastContainer />
+      <ToastContainer  style={{width:'100vw',overflowX:'hidden'}}/>
       <div className="screen__content">
         <MdCancel size={24} className="cancel" onClick={onClickHandler} />
         <form className="login">

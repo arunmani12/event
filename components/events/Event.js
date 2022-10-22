@@ -48,7 +48,7 @@ const Event = ({ user }) => {
       name: "Web Roar",
       quote: `Web Roar tests you based on your way with the languages like HTML, CSS, JS , React, etc...The limelight falls on recreation and creativity in design aspects, inclusive of both User Interface(UI) and User Experience(UX).So folks, sit back and put your fingers to work...It's time for your website to roar`,
       about:
-        "Web Roar tests you based on your way with the languages like HTML, CSS, JS , React, etc...The limelight falls on recreation and creativity in design aspects, inclusive of both User Interface(UI) and User Experience(UX).So folks, sit back and put your fingers to work...It's time for your website to roar",
+        "If you think math is hard, try website design! Department of IT is here with yet another creative-amidst-the-techies event",
       plan: "pro",
     },
   ];
@@ -248,7 +248,7 @@ const Event = ({ user }) => {
 
       <div className={styles.parent}>
         <h3 className="homeHeading" style={{ fontSize: "2rem" }}>
-          Non Techinical Events
+          Non Technical Events
         </h3>
         <div className={styles.paidevent}>
           {nonTechnicalEvents.map((d, i) => (

@@ -62,7 +62,7 @@ const Register = ({ setShowAuth,setCurrentModel ,setLoading}) => {
 
   return (
     <div className="screen">
-      <ToastContainer />
+      <ToastContainer style={{width:'100vw',overflowX:'hidden'}}/>
       <div className="screen__content">
         <form className="login">
           <BiArrowBack onClick={()=>setCurrentModel('login')} color="#777" fontSize={22} />
