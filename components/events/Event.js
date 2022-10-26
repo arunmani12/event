@@ -2,11 +2,11 @@ import React from "react";
 import { BiRupee } from "react-icons/bi";
 import { url } from "../../global";
 import styles from "./event.module.css";
+import { BsInfoCircle } from "react-icons/bs";
 import { useRouter } from "next/router";
 
 const Event = ({ user }) => {
-
-  const router = useRouter()
+  const router = useRouter();
 
   const priceEvent = [
     {
@@ -102,9 +102,8 @@ const Event = ({ user }) => {
   // console.log(user);
 
   const registerForEvent = async (event) => {
-
-    if(checkstatus(event)==='Registered'){
-      return
+    if (checkstatus(event) === "Registered") {
+      return;
     }
 
     const res = await fetch(`${url}/api/registerevent`, {
@@ -123,7 +122,7 @@ const Event = ({ user }) => {
       // setLoading(false)
       router.reload();
     } else {
-      alert('something went to wrong')
+      alert("something went to wrong");
       // setLoading(false)
       // toast("email or dob miss match");
     }
@@ -170,11 +169,11 @@ const Event = ({ user }) => {
                 />{" "}
                 <h4>8000</h4>
               </div>
-              {user && user.plan ==='pro' && (
+              {user && user.plan === "pro" && (
                 <button
                   style={{
                     left: "7rem",
-                  cursor:'pointer',
+                    cursor: "pointer",
                     backgroundColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
@@ -182,7 +181,7 @@ const Event = ({ user }) => {
                     borderColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
-                        : "rgb(232, 51, 99)"
+                        : "rgb(232, 51, 99)",
                   }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
@@ -190,7 +189,15 @@ const Event = ({ user }) => {
                   {checkstatus(d.name)}
                 </button>
               )}
-              <button className={styles.plan}>{d.plan}</button>
+              <button className={styles.plan}>
+                {d.plan}
+                {
+                  <BsInfoCircle
+                    color="rgb(232, 51, 99)"
+                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                  />
+                }
+              </button>
             </div>
           ))}
         </div>
@@ -220,11 +227,11 @@ const Event = ({ user }) => {
                   the textbooks.
                 </p>
               )}
-              {user  && (
+              {user && (
                 <button
                   style={{
                     left: "7rem",
-                  cursor:'pointer',
+                    cursor: "pointer",
                     backgroundColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
@@ -232,7 +239,7 @@ const Event = ({ user }) => {
                     borderColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
-                        : "rgb(232, 51, 99)"
+                        : "rgb(232, 51, 99)",
                   }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
@@ -240,7 +247,15 @@ const Event = ({ user }) => {
                   {checkstatus(d.name)}
                 </button>
               )}
-               <button className={styles.plan}>{d.plan}</button>
+              <button className={styles.plan}>
+                {d.plan}
+                {
+                  <BsInfoCircle
+                    color="rgb(232, 51, 99)"
+                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                  />
+                }
+              </button>
             </div>
           ))}
         </div>
@@ -269,27 +284,35 @@ const Event = ({ user }) => {
                   the textbooks.
                 </p>
               )}
-              {user  && (
+              {user && (
                 <button
-                style={{
-                  left: "7rem",
-                  cursor:'pointer',
-                  backgroundColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)",
-                  borderColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)"
-                }}
+                  style={{
+                    left: "7rem",
+                    cursor: "pointer",
+                    backgroundColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                    borderColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                  }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
                 >
                   {checkstatus(d.name)}
                 </button>
               )}
-              <button className={styles.plan}>{d.plan}</button>
+              <button className={styles.plan}>
+                {d.plan}
+                {
+                  <BsInfoCircle
+                    color="rgb(232, 51, 99)"
+                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                  />
+                }
+              </button>
             </div>
           ))}
         </div>
@@ -315,28 +338,36 @@ const Event = ({ user }) => {
                   the textbooks.
                 </p>
               )}
-           
-              {user  && (
+
+              {user && (
                 <button
-                style={{
-                  left: "7rem",
-                  cursor:'pointer',
-                  backgroundColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)",
-                  borderColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)"
-                }}
+                  style={{
+                    left: "7rem",
+                    cursor: "pointer",
+                    backgroundColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                    borderColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                  }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
                 >
                   {checkstatus(d.name)}
                 </button>
               )}
-              <button className={styles.plan}>{d.plan}</button>
+              <button className={styles.plan}>
+                {d.plan}
+                {
+                  <BsInfoCircle
+                    color="rgb(232, 51, 99)"
+                    style={{ marginLeft: "10px", cursor: "pointer" }}
+                  />
+                }
+              </button>
             </div>
           ))}
         </div>
