@@ -2,8 +2,9 @@ import React from "react";
 import { BiRupee } from "react-icons/bi";
 import { url } from "../../global";
 import styles from "./event.module.css";
-import { BsInfoCircle } from "react-icons/bs";
 import { useRouter } from "next/router";
+import Rules from "../rules/Rules";
+import Rounds from "../rules/Rounds";
 
 const Event = ({ user }) => {
   const router = useRouter();
@@ -189,15 +190,7 @@ const Event = ({ user }) => {
                   {checkstatus(d.name)}
                 </button>
               )}
-              <button className={styles.plan}>
-                {d.plan}
-                {
-                  <BsInfoCircle
-                    color="rgb(232, 51, 99)"
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
-                  />
-                }
-              </button>
+              <button className={styles.plan}>{d.plan}</button>
             </div>
           ))}
         </div>
@@ -247,15 +240,7 @@ const Event = ({ user }) => {
                   {checkstatus(d.name)}
                 </button>
               )}
-              <button className={styles.plan}>
-                {d.plan}
-                {
-                  <BsInfoCircle
-                    color="rgb(232, 51, 99)"
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
-                  />
-                }
-              </button>
+              <button className={styles.plan}>{d.plan}</button>
             </div>
           ))}
         </div>
@@ -304,15 +289,7 @@ const Event = ({ user }) => {
                   {checkstatus(d.name)}
                 </button>
               )}
-              <button className={styles.plan}>
-                {d.plan}
-                {
-                  <BsInfoCircle
-                    color="rgb(232, 51, 99)"
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
-                  />
-                }
-              </button>
+              <button className={styles.plan}>{d.plan}</button>
             </div>
           ))}
         </div>
@@ -359,19 +336,14 @@ const Event = ({ user }) => {
                   {checkstatus(d.name)}
                 </button>
               )}
-              <button className={styles.plan}>
-                {d.plan}
-                {
-                  <BsInfoCircle
-                    color="rgb(232, 51, 99)"
-                    style={{ marginLeft: "10px", cursor: "pointer" }}
-                  />
-                }
-              </button>
+              <button className={styles.plan}>{d.plan}</button>
             </div>
           ))}
         </div>
       </div>
+
+      <Rules />
+      <Rounds />
 
       <section className="contact-area" id="contact">
         <div className="container-footer">
