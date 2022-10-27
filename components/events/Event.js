@@ -213,7 +213,7 @@ const Event = ({ user }) => {
      
 
 
-      <div style={{ margin: "1rem auto",width:'90%',paddingBottom:'2rem' }} className={styles.eventCard}>
+      <div style={{ margin: "1rem auto",width:'90%',paddingBottom:'2rem',textAlign:'start' }} className={styles.eventCard}>
          <p>Overall Event Queries : Mohnish(9150830225)</p>
          <hr style={{ margin: "1rem auto" }}/>
          <p>For Technical Issues : Arunmani(8610435514)</p>

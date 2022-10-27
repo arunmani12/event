@@ -50,23 +50,7 @@ const RoundsMobile = () => {
     } else changeTransform(500, (currentIndex - 1) * -100);
   };
 
-  let touchHandler = (e) => {
-    if (window.innerWidth / 2 < e.changedTouches[0].clientX) {
-      setCurrrentDirection("right");
-      if (currrentDirection != "right") {
-        rightClickHandler();
-      }
-    } else {
-      setCurrrentDirection("left");
-      if (currrentDirection != "left") {
-        leftClickHandler();
-      }
-    }
-  };
-
-  let touchEnd = () => {
-    setCurrrentDirection("");
-  };
+  
 
   return (
     <div className={styles.App}>
@@ -77,8 +61,6 @@ const RoundsMobile = () => {
 
         <div
           className={styles["card-holder"]}
-          onTouchMove={touchHandler}
-          onTouchEnd={touchEnd}
           ref={inside}
         >
           {divContent.map((d, i) => (

@@ -5,7 +5,6 @@ import {rounds as data} from './data'
 
 const Rounds = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
-  const [currrentDirection, setCurrrentDirection] = useState("");
   const [divContent, setdivContent] = useState([]);
   useEffect(() => {
     let leftPart = [];
@@ -49,23 +48,7 @@ const Rounds = () => {
     } else changeTransform(500, (currentIndex - 1) * -33.33);
   };
 
-  let touchHandler = (e) => {
-    if (window.innerWidth / 2 < e.changedTouches[0].clientX) {
-      setCurrrentDirection("right");
-      if (currrentDirection != "right") {
-        rightClickHandler();
-      }
-    } else {
-      setCurrrentDirection("left");
-      if (currrentDirection != "left") {
-        leftClickHandler();
-      }
-    }
-  };
-
-  let touchEnd = () => {
-    setCurrrentDirection("");
-  };
+  
 
   return (
     <div className={styles.App}>
@@ -85,8 +68,6 @@ const Rounds = () => {
 
         <div
           className={styles["card-holder"]}
-          onTouchMove={touchHandler}
-          onTouchEnd={touchEnd}
           ref={inside}
         >
           {divContent.map((d, i) => (
