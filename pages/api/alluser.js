@@ -1,12 +1,25 @@
 import dbConnect from "../../db/connectDb";
 import User from "../../models/User";
-// import { verify } from "jsonwebtoken";
+import { verify } from "jsonwebtoken";
 
 dbConnect();
+
+const secret = "arunmani";
 
 
 export default async function handler(req, res) {
   try {
+
+    const jwt = req.cookies.OursiteJWT;
+
+    const dataFromToken = verify(jwt, secret);
+
+
+    const email = dataFromToken.email;
+
+    if(email!=='arunmani9787@gmail.com'){
+      return res.status(401).json({ message: "no bro" });
+    }
 
    
     const user = await User.find({});
@@ -19,8 +32,8 @@ export default async function handler(req, res) {
 
     return res.status(401).json({user });
 
-    res.status(200).json({user});
   } catch (e) {
-    res.status(401).json({ message: "no user to be found" });
+    console.log(e)
+    res.status(401).json({ message: "something wrong" });
   }
 }

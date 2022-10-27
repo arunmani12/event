@@ -71,7 +71,7 @@ const RulesMobile = () => {
     <div className={styles.App}>
     
       <div className={styles["card-holder-wrapper"]}>
-        <h3 className="homeHeading" style={{ margin: "2rem 0",marginLeft:'1%' }}>Rounds</h3>
+        <h3 className="homeHeading" style={{ margin: "2rem 0",marginLeft:'1%' }}>Rules</h3>
         <div
           className={styles["card-holder"]}
           onTouchMove={touchHandler}

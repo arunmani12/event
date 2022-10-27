@@ -6,7 +6,6 @@
     background-color:  rgba(227, 228, 233, 0.16);
     /* color: black; */
     font-family: ProximaNova-Regular;
-    color: white;
     backdrop-filter: blur(10px);
     text-transform: uppercase;
     justify-content: space-between;
@@ -15,20 +14,19 @@
     height: 100px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     z-index: 100;
+    color: #cce3de;
 }
 
 .nav p{
     font-weight: 400;
-    color: rgb(148, 243, 244);
+    /* color: rgb(148, 243, 244); */
     font-size: 1.5rem;
 }
 
-@media (max-width: 600px) {
-    .nav p{
-        font-size: 2rem;
-        line-height: 140%;
-        width: 60%;
-    }
+.img {
+    width: 6%;
+    /* margin-left: 0; */
+    margin-right: 2%;
 }
 
 .nav h2{
@@ -36,5 +34,20 @@
     margin: 0;
     font-weight: 400;
     cursor: pointer;
-    font-size: 2.3rem;
+    font-size: 1.8rem;
+}
+
+@media (max-width: 600px) {
+    .nav p{
+        font-size: 1.3rem;
+        line-height: 140%;
+        width: 60%;
+    }
+    .img {
+        width: 20%;
+        margin-right: 5%;
+    }
+    .nav h2{
+    font-size: 1.3rem;
+    }
 }

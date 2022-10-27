@@ -43,7 +43,7 @@ const NavBar = ({ setShowAuth,logedIn=false }) => {
   }
 
   function calName(){
-    if(currentWidth>=500){
+    if(currentWidth>=600){
       return 'ANJALAI AMMAL MAHALINGAM ENGEERING COLLEGE'
     }else{
       return 'AAMEC'
@@ -54,7 +54,10 @@ const NavBar = ({ setShowAuth,logedIn=false }) => {
     <>
     {loading && <Loader/>}
     <div className={styles.nav}>
-      <p>{calName()}</p>
+      <div style={{display:'flex',alignItems:'center'}}>
+      <img src="/ammec.png" className={styles.img} />
+    <p>{calName()}</p>
+      </div>
       {/* <AiOutlineLogin
         onClick={() => setShowAuth((prv) => !prv)}
         cursor="pointer"

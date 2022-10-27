@@ -156,7 +156,7 @@ const Event = ({ user }) => {
     <>
       <div className={styles.parent}>
         <p className="homeHeading" style={{ fontSize: "2rem" }}>
-          Price Events
+          Cash Price Events
         </p>
         <div className={styles.paidevent}>
           {normalEvent.map((d, i) => (
@@ -177,7 +177,7 @@ const Event = ({ user }) => {
                   flexDirection: "row",
                 }}
               >
-                <h4>Prices worth of</h4>{" "}
+                <h4>Price worth</h4>{" "}
                 <BiRupee
                   color="rgb(232, 51, 99)"
                   style={{ marginLeft: "0.5rem" }}

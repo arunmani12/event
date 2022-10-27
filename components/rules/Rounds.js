@@ -81,7 +81,7 @@ const Rounds = () => {
         onClick={leftClickHandler}
       />
       <div className={styles["card-holder-wrapper"]}>
-      <h3 className="homeHeading" style={{ margin: "2rem 0",marginLeft:'1%' }}>Rules</h3>
+      <h3 className="homeHeading" style={{ margin: "2rem 0",marginLeft:'1%' }}>Rounds</h3>
 
         <div
           className={styles["card-holder"]}
@@ -94,9 +94,9 @@ const Rounds = () => {
               <div className={styles["card-content"]}>
                 <div className={styles["card-body"]}>
                   <h2 style={{ marginBottom: "0.7rem" }}>{d.Heading}</h2>
-                  <div style={{height:'24rem'}}>
+                  <div style={{height:'26rem'}}>
                   {d.Content.map((d) => (
-                    <p key={d}>{d}</p>
+                    <p style={{marginBottom:"3%",fontSize:"0.9rem"}} key={d}>{d}</p>
                   ))}
                   </div>
                   <h3 style={{ margin: "1rem 0" }}>Contact</h3>

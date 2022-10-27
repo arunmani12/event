@@ -76,6 +76,8 @@
   color: #7e7bb9;
 }
 
+
+
 @media (max-width: 600px) {
   .parent {
     margin-top: 4rem;
