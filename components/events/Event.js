@@ -3,6 +3,9 @@ import { BiRupee } from "react-icons/bi";
 import { url } from "../../global";
 import styles from "./event.module.css";
 import { useRouter } from "next/router";
+import Rules from "../rules/Rules";
+import Rounds from "../rules/Rounds"
+
 
 const Event = ({ user }) => {
 
@@ -196,6 +199,7 @@ const Event = ({ user }) => {
         </div>
       </div>
 
+
       {/* -------//------- */}
       <div className={styles.parent}>
         <h3 className="homeHeading" style={{ fontSize: "2rem" }}>
@@ -342,6 +346,9 @@ const Event = ({ user }) => {
         </div>
       </div>
 
+      <Rules/>
+      <Rounds/>
+
       <section className="contact-area" id="contact">
         <div className="container-footer">
           <div className="row">
@@ -364,6 +371,7 @@ const Event = ({ user }) => {
             </div>
           </div>
         </div>
+
       </section>
     </>
   );
