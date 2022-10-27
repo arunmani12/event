@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
-import styles from "./rules.module.css";
+import styles from "./mobile.module.css";
 import {rounds as data} from './data'
 
-const Rounds = () => {
+const RoundsMobile = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [currrentDirection, setCurrrentDirection] = useState("");
   const [divContent, setdivContent] = useState([]);
@@ -17,7 +17,7 @@ const Rounds = () => {
     const dataObj = [...leftPart, ...data, ...rightPart.reverse()];
     setdivContent(dataObj);
     setCurrentIndex(3);
-    changeTransform(0, 3 * -33.33);
+    changeTransform(0, 3 * -100);
   }, []);
   const inside = useRef();
 
@@ -28,25 +28,26 @@ const Rounds = () => {
   };
 
   const leftClickHandler = () => {
+    // console.log('hi')
     setCurrentIndex((prv) => prv + 1);
     if (currentIndex >= divContent.length - 3) {
-      changeTransform(0, 0);
+      changeTransform(0, -100);
       setTimeout(() => {
-        changeTransform(500, -33.33);
-        setCurrentIndex(1);
+        changeTransform(500, -200);
+        setCurrentIndex(2);
       }, 25);
-    } else changeTransform(500, (currentIndex + 1) * -33.33);
+    } else changeTransform(500, (currentIndex + 1) * -100);
   };
 
   const rightClickHandler = () => {
     setCurrentIndex((prv) => prv - 1);
     if (currentIndex === 0) {
-      changeTransform(0, (divContent.length - 3) * -33.33);
+      changeTransform(0, (divContent.length - 3) * -100);
       setTimeout(() => {
-        changeTransform(500, (divContent.length - 4) * -33.33);
+        changeTransform(500, (divContent.length - 4) * -100);
         setCurrentIndex(divContent.length - 4);
       }, 50);
-    } else changeTransform(500, (currentIndex - 1) * -33.33);
+    } else changeTransform(500, (currentIndex - 1) * -100);
   };
 
   let touchHandler = (e) => {
@@ -70,16 +71,7 @@ const Rounds = () => {
   return (
     <div className={styles.App}>
       {/* use can use arrow icons :) */}
-      <AiFillLeftCircle
-        className={styles.arrow}
-        style={{ position: "absolute", top: "50%", right: "95%" }}
-        onClick={rightClickHandler}
-      />
-      <AiFillRightCircle
-        className={styles.arrow}
-        style={{ position: "absolute", top: "50%", left: "95%" }}
-        onClick={leftClickHandler}
-      />
+     
       <div className={styles["card-holder-wrapper"]}>
       <h3 className="homeHeading" style={{ margin: "2rem 0",marginLeft:'1%' }}>Rules</h3>
 
@@ -92,9 +84,9 @@ const Rounds = () => {
           {divContent.map((d, i) => (
             <div className={styles["card"]} key={i}>
               <div className={styles["card-content"]}>
-                <div className={styles["card-body"]}>
+                <div className={styles["card-body"]} style={{padding:'3%'}}>
                   <h2 style={{ marginBottom: "0.7rem" }}>{d.Heading}</h2>
-                  <div style={{height:'24rem'}}>
+                  <div>
                   {d.Content.map((d) => (
                     <p key={d}>{d}</p>
                   ))}
@@ -122,8 +114,26 @@ const Rounds = () => {
           ))}
         </div>
       </div>
+
+      <div style={{
+        width:'100%',
+        display:'flex',
+        justifyContent:'space-around',
+        marginTop:'2rem'
+      }}>
+      <AiFillLeftCircle
+        className={styles.arrow}
+        // style={{ position: "absolute", top: "50%", right: "95%" }}
+        onClick={rightClickHandler}
+      />
+      <AiFillRightCircle
+        className={styles.arrow}
+        // style={{ position: "absolute", top: "50%", left: "95%" }}
+        onClick={leftClickHandler}
+      />
+      </div>
     </div>
   );
 };
 
-export default Rounds;
+export default RoundsMobile;

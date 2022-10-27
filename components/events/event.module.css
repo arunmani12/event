@@ -84,6 +84,7 @@
     width: 100%;
     flex-direction: column;
     height: auto;
+    margin-bottom: 0;
   }
   .eventCard {
     width: 100%;

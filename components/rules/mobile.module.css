@@ -10,12 +10,12 @@
 
 
 .card-holder-wrapper{
-    width: 80%;
+    width: 90%;
+    border-radius: 1rem;
+
     margin: 0 auto;
     /* height: 450px; */
     overflow:clip;
-    border-radius: 1rem;
-
   }
   
   .card-holder{
@@ -26,10 +26,10 @@
   
   .card{
     /* margin-top: 10px; */
-    width: 31.33%;
+    width: 98%;
     /* background-color: white; */
     margin: 0 1%;
-    padding: 2%;
+    padding: 1%;
     /* padding: 1.3rem;
     border-radius: 1.2rem;
     /* box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px; */

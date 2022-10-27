@@ -5,6 +5,8 @@ import styles from "./event.module.css";
 import { useRouter } from "next/router";
 import Rules from "../rules/Rules";
 import Rounds from "../rules/Rounds";
+import RoundsMobile from "../rules/RoundsMobile";
+import RulesMobile from "../rules/RulesMobile";
 
 const Event = ({ user }) => {
   const router = useRouter();
@@ -138,6 +140,18 @@ const Event = ({ user }) => {
     }
   };
 
+  const [currentWidth, setCurrentWidth] = React.useState();
+
+  React.useEffect(() => {
+    setCurrentWidth(window?.innerWidth);
+  }, []);
+
+  if (typeof window != "undefined") {
+    window.addEventListener("resize", () => {
+      setCurrentWidth(window?.innerWidth);
+    });
+  }
+
   return (
     <>
       <div className={styles.parent}>
@@ -195,6 +209,30 @@ const Event = ({ user }) => {
           ))}
         </div>
       </div>
+
+     
+
+
+      <div style={{ margin: "1rem auto",width:'90%',paddingBottom:'2rem' }} className={styles.eventCard}>
+         <p>Overall Event Queries : Mohnish(9150830225)</p>
+         <hr style={{ margin: "1rem auto" }}/>
+         <p>For Technical Issues : Arunmani(8610435514)</p>
+                  {/* <h3>Staff Coordinator</h3> */}
+                  
+      </div>
+    
+
+      {currentWidth >= 550 ? (
+        <>
+          <Rules />
+          <Rounds />
+        </>
+      ) : (
+        <>
+          <RoundsMobile />
+          <RulesMobile />
+        </>
+      )}
 
       {/* -------//------- */}
       <div className={styles.parent}>
@@ -341,9 +379,6 @@ const Event = ({ user }) => {
           ))}
         </div>
       </div>
-
-      <Rules />
-      <Rounds />
 
       <section className="contact-area" id="contact">
         <div className="container-footer">
