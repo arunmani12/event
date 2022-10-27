@@ -21,7 +21,7 @@ const ProContainer = ({ user }) => {
       </div>
 
         <div className={styles.insideCard}>
-        <h2>My events :-</h2>
+        <h2>My Events :-</h2>
            {!user.events.length  ?<>
               <p>Please scroll down and register for individual events (Basic) by clicking register button</p>
               <p>limit:3</p>

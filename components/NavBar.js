@@ -11,6 +11,7 @@ const NavBar = ({ setShowAuth,logedIn=false }) => {
 
   const [loading,setLoading] = useState(false)
 
+
   const router = useRouter();
   
   const logoutHandler = async() =>{
@@ -27,10 +28,36 @@ const NavBar = ({ setShowAuth,logedIn=false }) => {
     }
   }
 
+
+  const [currentWidth,setCurrentWidth] = React.useState()
+
+  React.useEffect(() => {
+    setCurrentWidth(window?.innerWidth)
+  }, [])
+
+
+  if(typeof window!='undefined'){
+    window.addEventListener('resize', () => {
+      setCurrentWidth(window?.innerWidth)
+    });
+  }
+
+  function calName(){
+    if(currentWidth>=600){
+      return 'ANJALAI AMMAL MAHALINGAM ENGEERING COLLEGE'
+    }else{
+      return 'AAMEC'
+    }
+  }
+
   return (
     <>
     {loading && <Loader/>}
     <div className={styles.nav}>
+      <div style={{display:'flex',alignItems:'center'}}>
+      <img src="/ammec.png" className={styles.img} />
+    <p>{calName()}</p>
+      </div>
       {/* <AiOutlineLogin
         onClick={() => setShowAuth((prv) => !prv)}
         cursor="pointer"

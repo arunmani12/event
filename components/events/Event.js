@@ -3,10 +3,13 @@ import { BiRupee } from "react-icons/bi";
 import { url } from "../../global";
 import styles from "./event.module.css";
 import { useRouter } from "next/router";
+import Rules from "../rules/Rules";
+import Rounds from "../rules/Rounds";
+import RoundsMobile from "../rules/RoundsMobile";
+import RulesMobile from "../rules/RulesMobile";
 
 const Event = ({ user }) => {
-
-  const router = useRouter()
+  const router = useRouter();
 
   const priceEvent = [
     {
@@ -102,9 +105,8 @@ const Event = ({ user }) => {
   // console.log(user);
 
   const registerForEvent = async (event) => {
-
-    if(checkstatus(event)==='Registered'){
-      return
+    if (checkstatus(event) === "Registered") {
+      return;
     }
 
     const res = await fetch(`${url}/api/registerevent`, {
@@ -123,7 +125,7 @@ const Event = ({ user }) => {
       // setLoading(false)
       router.reload();
     } else {
-      alert('something went to wrong')
+      alert("something went to wrong");
       // setLoading(false)
       // toast("email or dob miss match");
     }
@@ -138,11 +140,23 @@ const Event = ({ user }) => {
     }
   };
 
+  const [currentWidth, setCurrentWidth] = React.useState();
+
+  React.useEffect(() => {
+    setCurrentWidth(window?.innerWidth);
+  }, []);
+
+  if (typeof window != "undefined") {
+    window.addEventListener("resize", () => {
+      setCurrentWidth(window?.innerWidth);
+    });
+  }
+
   return (
     <>
       <div className={styles.parent}>
         <p className="homeHeading" style={{ fontSize: "2rem" }}>
-          Price Events
+          Cash Price Events
         </p>
         <div className={styles.paidevent}>
           {normalEvent.map((d, i) => (
@@ -163,18 +177,18 @@ const Event = ({ user }) => {
                   flexDirection: "row",
                 }}
               >
-                <h4>Prices worth of</h4>{" "}
+                <h4>Price worth</h4>{" "}
                 <BiRupee
                   color="rgb(232, 51, 99)"
                   style={{ marginLeft: "0.5rem" }}
                 />{" "}
                 <h4>8000</h4>
               </div>
-              {user && user.plan ==='pro' && (
+              {user && user.plan === "pro" && (
                 <button
                   style={{
                     left: "7rem",
-                  cursor:'pointer',
+                    cursor: "pointer",
                     backgroundColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
@@ -182,7 +196,7 @@ const Event = ({ user }) => {
                     borderColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
-                        : "rgb(232, 51, 99)"
+                        : "rgb(232, 51, 99)",
                   }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
@@ -195,6 +209,30 @@ const Event = ({ user }) => {
           ))}
         </div>
       </div>
+
+     
+
+
+      <div style={{ margin: "1rem auto",width:'90%',paddingBottom:'2rem' }} className={styles.eventCard}>
+         <p>Overall Event Queries : Mohnish(9150830225)</p>
+         <hr style={{ margin: "1rem auto" }}/>
+         <p>For Technical Issues : Arunmani(8610435514)</p>
+                  {/* <h3>Staff Coordinator</h3> */}
+                  
+      </div>
+    
+
+      {currentWidth >= 550 ? (
+        <>
+          <Rules />
+          <Rounds />
+        </>
+      ) : (
+        <>
+          <RoundsMobile />
+          <RulesMobile />
+        </>
+      )}
 
       {/* -------//------- */}
       <div className={styles.parent}>
@@ -220,11 +258,11 @@ const Event = ({ user }) => {
                   the textbooks.
                 </p>
               )}
-              {user  && (
+              {user && (
                 <button
                   style={{
                     left: "7rem",
-                  cursor:'pointer',
+                    cursor: "pointer",
                     backgroundColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
@@ -232,7 +270,7 @@ const Event = ({ user }) => {
                     borderColor:
                       checkstatus(d.name) === "Registered"
                         ? "rgb(232, 154, 175)"
-                        : "rgb(232, 51, 99)"
+                        : "rgb(232, 51, 99)",
                   }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
@@ -240,7 +278,7 @@ const Event = ({ user }) => {
                   {checkstatus(d.name)}
                 </button>
               )}
-               <button className={styles.plan}>{d.plan}</button>
+              <button className={styles.plan}>{d.plan}</button>
             </div>
           ))}
         </div>
@@ -269,20 +307,20 @@ const Event = ({ user }) => {
                   the textbooks.
                 </p>
               )}
-              {user  && (
+              {user && (
                 <button
-                style={{
-                  left: "7rem",
-                  cursor:'pointer',
-                  backgroundColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)",
-                  borderColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)"
-                }}
+                  style={{
+                    left: "7rem",
+                    cursor: "pointer",
+                    backgroundColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                    borderColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                  }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
                 >
@@ -315,21 +353,21 @@ const Event = ({ user }) => {
                   the textbooks.
                 </p>
               )}
-           
-              {user  && (
+
+              {user && (
                 <button
-                style={{
-                  left: "7rem",
-                  cursor:'pointer',
-                  backgroundColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)",
-                  borderColor:
-                    checkstatus(d.name) === "Registered"
-                      ? "rgb(232, 154, 175)"
-                      : "rgb(232, 51, 99)"
-                }}
+                  style={{
+                    left: "7rem",
+                    cursor: "pointer",
+                    backgroundColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                    borderColor:
+                      checkstatus(d.name) === "Registered"
+                        ? "rgb(232, 154, 175)"
+                        : "rgb(232, 51, 99)",
+                  }}
                   onClick={() => registerForEvent(d.name)}
                   className={styles.plan}
                 >
