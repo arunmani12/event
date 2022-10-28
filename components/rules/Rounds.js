@@ -89,7 +89,7 @@ const Rounds = () => {
                   </p>
                   <p>
                     {d.Contact["Student Coordinators"].std2[1]} -{" "}
-                    {d.Contact["Student Coordinators"].std1[0]}
+                    {d.Contact["Student Coordinators"].std2[0]}
                   </p>
                   <hr style={{ margin: "1rem 0" }} />
                   <h3>Staff Coordinator</h3>
