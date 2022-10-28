@@ -182,7 +182,7 @@ const Event = ({ user }) => {
                   color="rgb(232, 51, 99)"
                   style={{ marginLeft: "0.5rem" }}
                 />{" "}
-                <h4>8000</h4>
+                <h4>Exciting Case </h4>
               </div>
               {user && user.plan === "pro" && (
                 <button
