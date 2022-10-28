@@ -214,9 +214,13 @@ const Event = ({ user }) => {
 
 
       <div style={{ margin: "1rem auto",width:'90%',paddingBottom:'2rem',textAlign:'start' }} className={styles.eventCard}>
+<p>For Technical Issues : Arunmani(8610435514)</p>
+<p>For Technical Issues : Manikandan(6379763494)</p>
+<hr style={{ margin: "1rem auto" }}/>
          <p>Overall Event Queries : Mohnish(9150830225)</p>
-         <hr style={{ margin: "1rem auto" }}/>
-         <p>For Technical Issues : Arunmani(8610435514)</p>
+        <p>Overall Event Queries : Vijayaragavan(9952836477)</p>
+         
+         
                   {/* <h3>Staff Coordinator</h3> */}
                   
       </div>
