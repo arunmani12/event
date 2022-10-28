@@ -30,7 +30,11 @@ export default async function handler(req, res) {
         return res.status(403).json({ message: "already registered bro" });
     }
 
-    if(user.events.length>=3){
+    if(user.plan==='pro' && user.events.length>=3){
+        return res.status(403).json({ message: "sorry" });
+    }
+
+    if((!user.plan) && user.events.length>=2){
         return res.status(403).json({ message: "sorry" });
     }
 

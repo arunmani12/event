@@ -75,10 +75,10 @@ const BasicContainer = ({ user }) => {
           <h2>My Events :-</h2>
            {!user.events.length  ?<>
               <p>Please scroll down and register for individual events (Basic) by clicking register button</p>
-              <p>limit:3</p>
+              <p>limit:2</p>
            </>:
            <>
-              <p>limit:3</p>
+              <p>limit:2</p>
               {user.events.map((d,i)=><p key={d}>{i+1 +"."+" "+ d}</p>)}
            </>}
         </div>

@@ -125,7 +125,7 @@ const Event = ({ user }) => {
       // setLoading(false)
       router.reload();
     } else {
-      alert("something went to wrong");
+      alert("something went to wrong ? already registered ta ? limit parrunga!");
       // setLoading(false)
       // toast("email or dob miss match");
     }
