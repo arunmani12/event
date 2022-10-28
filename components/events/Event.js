@@ -178,7 +178,7 @@ const Event = ({ user }) => {
                 }}
               >
       
-                <h4>Exciting Case </h4>
+                <h4>Exciting Cash Price</h4>
               </div>
               {user && user.plan === "pro" && (
                 <button
