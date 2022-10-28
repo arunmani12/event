@@ -177,11 +177,7 @@ const Event = ({ user }) => {
                   flexDirection: "row",
                 }}
               >
-                <h4>Price worth</h4>{" "}
-                <BiRupee
-                  color="rgb(232, 51, 99)"
-                  style={{ marginLeft: "0.5rem" }}
-                />{" "}
+      
                 <h4>Exciting Case </h4>
               </div>
               {user && user.plan === "pro" && (
