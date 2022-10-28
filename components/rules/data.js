@@ -30,7 +30,7 @@ export const rounds = [
       Heading: "CryptoMot",
       Content: [
         `Round 1:ENCRYPTION- From the given word match the suitable number with each letter within 60seconds.
-            EX: A=0,B=1,C=3,.......Z=25.`,
+            EX: A=0,B=1,C=2,.......Z=25.`,
         `Round 2: WORD FORMATION.- Frame the maximum number of technical words from given letters within 65seconds.`,
         `Round 3: JUMBLED WORD- Find the correct jumbled technical word based on the clue given within 120 seconds of time
             duration.,`,
@@ -64,7 +64,7 @@ export const rounds = [
         `Phase 1: Submission of Investigation Report.- After observing the crime scene, each team will be provided with the police report and
             have to submit their investigation report within the time limit provided.`,
         `Phase 2: Discussion with Cops.- Top 4 teams with appropriate investigation report will be discussed with the cops to close
-            the case`,
+            the case.`,
       ],
       Contact: {
         "Student Coordinators": {
@@ -125,9 +125,9 @@ export const rules = [
     {
       Heading: "De Paper Festa",
       Content: [
-        `1. Participants are requested to bring hard copy in IEEE format`,
+        `1. Participants are requested to bring hard copy in IEEE format.`,
         `2. The soft copy(.ppt) should be sent to techfinity2k22@gmail.com, two days prior to the event.`,
-        `3. Team members count should be 2 or 3 only`,
+        `3. Team members count should be 2 or 3 only.`,
         `4. Topic : Should be Innovative and Technical related to recent trends.`,
         `5. Presentation time for each team is 10 mins.`,
       ],
@@ -137,9 +137,9 @@ export const rules = [
       Content: [
         `1.Participants are requested to assemble 10 minutes prior to the commencement of the event.`,
         `2.Team restricted to two members and can use familiar technology for development.`,
-        `3.Participants can bring their own laptops for development purpose,if possible.(Note:Individual systems will be provided to each teams)`,
+        `3.Participants can bring their own laptops for development purpose,if possible.(Note:Individual systems will be provided to each teams).`,
         `4.Seeking website during the session will lead to disqualification.`,
-        `5.Usage of Mobile phones is prohibited except for using mobile hotspot during the event.(Note:For laptop users)`,
+        `5.Usage of Mobile phones is prohibited except for using mobile hotspot during the event.(Note:For laptop users).`,
       ],
     },
     {

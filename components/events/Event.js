@@ -125,7 +125,9 @@ const Event = ({ user }) => {
       // setLoading(false)
       router.reload();
     } else {
-      alert("something went to wrong ? already registered ta ? limit parrunga!");
+      alert(
+        "something went to wrong ? already registered ta ? limit parrunga!"
+      );
       // setLoading(false)
       // toast("email or dob miss match");
     }
@@ -156,7 +158,7 @@ const Event = ({ user }) => {
     <>
       <div className={styles.parent}>
         <p className="homeHeading" style={{ fontSize: "2rem" }}>
-          Cash Price Events
+          Pro Techie Events
         </p>
         <div className={styles.paidevent}>
           {normalEvent.map((d, i) => (
@@ -177,8 +179,7 @@ const Event = ({ user }) => {
                   flexDirection: "row",
                 }}
               >
-      
-                <h4>Exciting Cash Price</h4>
+                <h4>Exciting Cash Prices</h4>
               </div>
               {user && user.plan === "pro" && (
                 <button
@@ -206,21 +207,23 @@ const Event = ({ user }) => {
         </div>
       </div>
 
-     
-
-
-      <div style={{ margin: "1rem auto",width:'90%',paddingBottom:'2rem',textAlign:'start' }} className={styles.eventCard}>
-<p>For Technical Issues : Arunmani(8610435514)</p>
-<p>For Technical Issues : Manikandan(6379763494)</p>
-<hr style={{ margin: "1rem auto" }}/>
-         <p>Overall Event Queries : Mohnish(9150830225)</p>
+      <div
+        style={{
+          margin: "1rem auto",
+          width: "90%",
+          paddingBottom: "2rem",
+          textAlign: "start",
+        }}
+        className={styles.eventCard}
+      >
+        <p>For Technical Issues : Arunmani(8610435514)</p>
+        <p>For Technical Issues : Manikandan(6379763494)</p>
+        <hr style={{ margin: "1rem auto" }} />
+        <p>Overall Event Queries : Mohnish(9150830225)</p>
         <p>Overall Event Queries : Vijayaragavan(9952836477)</p>
-         
-         
-                  {/* <h3>Staff Coordinator</h3> */}
-                  
+
+        {/* <h3>Staff Coordinator</h3> */}
       </div>
-    
 
       {currentWidth >= 550 ? (
         <>
@@ -237,7 +240,7 @@ const Event = ({ user }) => {
       {/* -------//------- */}
       <div className={styles.parent}>
         <h3 className="homeHeading" style={{ fontSize: "2rem" }}>
-          Normal Events
+          Basic Techie Events
         </h3>
         <div className={styles.paidevent}>
           {priceEvent.map((d, i) => (
@@ -285,9 +288,9 @@ const Event = ({ user }) => {
       </div>
 
       <div className={styles.parent}>
-        <h3 className="homeHeading" style={{ fontSize: "2rem" }}>
+        {/* <h3 className="homeHeading" style={{ fontSize: "2rem" }}>
           Non Technical Events
-        </h3>
+        </h3> */}
         <div className={styles.paidevent}>
           {nonTechnicalEvents.map((d, i) => (
             <div key={i} className={styles.eventCard}>
