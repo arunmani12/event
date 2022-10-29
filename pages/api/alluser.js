@@ -10,7 +10,7 @@ const secret = "arunmani";
 export default async function handler(req, res) {
   try {
 
-    const jwt = req.cookies.OursiteJWT;
+    const jwt = req.headers.authorization
 
     const dataFromToken = verify(jwt, secret);
 

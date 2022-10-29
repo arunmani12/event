@@ -31,7 +31,7 @@ export const rounds = [
       Content: [
         `Round 1:ENCRYPTION- From the given word match the suitable number with each letter within 60seconds.
             EX: A=0,B=1,C=2,.......Z=25.`,
-        `Round 2: WORD FORMATION.- Frame the maximum number of technical words from given letters within 65seconds.`,
+        `Round 2: BODMAS - To solve the alphabetic equation using cipher value.(you should know BODMAS rule). with in 65 seconds.`,
         `Round 3: JUMBLED WORD- Find the correct jumbled technical word based on the clue given within 120 seconds of time
             duration.,`,
       ],

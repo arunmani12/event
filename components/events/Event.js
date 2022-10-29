@@ -216,11 +216,18 @@ const Event = ({ user }) => {
         }}
         className={styles.eventCard}
       >
-        <p>For Technical Issues : Arunmani(8610435514)</p>
-        <p>For Technical Issues : Manikandan(6379763494)</p>
+        <p>
+          <span style={{color:'rgb(232, 51, 99)'}}>For Technical Issues </span><br/> 
+          Arunmani(8610435514)
+          <br />
+          Manikandan(6379763494)
+        </p>
         <hr style={{ margin: "1rem auto" }} />
-        <p>Overall Event Queries : Mohnish(9150830225)</p>
-        <p>Overall Event Queries : Vijayaragavan(9952836477)</p>
+        <p><span style={{color:'rgb(232, 51, 99)'}}>Overall Event Queries</span>
+         <br/> 
+         Mohnish(9150830225)
+         <br/>
+         Vijayaragavan(9952836477)</p>
 
         {/* <h3>Staff Coordinator</h3> */}
       </div>

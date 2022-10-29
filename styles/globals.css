@@ -381,3 +381,45 @@ footer img {
 		margin-top: 4rem;
 	}
 }
+
+.table{
+  border: 1px solid white;
+  /* color: white; */
+  min-width: 1000px;
+  /* overflow-x: scroll; */
+  margin-top: 2rem;
+}
+
+.firstRow{
+  box-sizing: border-box;
+  /* position: absolute; */
+  width: 1302.49px;
+  height: 55px;
+  left: 309.54px;
+  top: 404.06px;
+  background: #FFFFFF;
+  border-width: 1px 1px 1px 1px !important;
+  border-style: solid !important;
+  border-color: #DDE0E2 !important;
+  }
+
+.firstRow td{
+  padding: 0 0.5rem;
+}
+
+.order{
+  background-color: #353c46;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-left: 2rem;
+
+}
+
+.button{
+  margin-top: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  margin-left: 2rem;
+}
