@@ -83,7 +83,7 @@ export default function Home(props) {
         background:'#353c46'
       }}
     >
-      <div onClick={()=>setFilter(e=>!e)} className='button'>Filter</div>
+      <div onClick={()=>setFilter(e=>!e)} className='button-2'>Filter</div>
       {Filter && <div className="order">
       {[
         "Night Owl Quiz",
