@@ -21,9 +21,22 @@ Content-Type: application/json
 ###All user
 GET   http://localhost:3000/api/alluser
 
+{
+ "Content-Type": "application/json",
+ "Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njk2NTU0NTMsImVtYWlsIjoiYXJ1bm1hbmk5Nzg3QGdtYWlsLmNvbSIsImlhdCI6MTY2NzA2MzQ1M30.UUruzEHI-ncfeUMOPT0NpzMNJTpJDI9ObJ6IdCS_iSo",
+}
+
+
 
 ###update user
 GET   http://localhost:3000/api/updateuser
+
+
+
+
+
+###delete user
+GET   http://localhost:3000/api/del
 
 
 

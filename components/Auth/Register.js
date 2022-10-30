@@ -16,6 +16,7 @@ const Register = ({ setShowAuth,setCurrentModel ,setLoading}) => {
   const [DOB, setDOB] = useState('');
   const [collegeName, setCollegeName] = useState('');
   const [Name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
   const router = useRouter()
 
@@ -27,7 +28,7 @@ const Register = ({ setShowAuth,setCurrentModel ,setLoading}) => {
   
   const registerHandler = async () => {
 
-    if (!(email.length>0) || !(DOB.length>=10) ||!(collegeName.length>4) || !(Name.length>4)) {
+    if (!(email.length>0) || !(DOB.length>=10) ||!(collegeName.length>4) || !(Name.length>4) ||number.length<10) {
       if (!validateEmail(email)) {
         toast("Please enter vaild email");   
         return;
@@ -46,7 +47,8 @@ const Register = ({ setShowAuth,setCurrentModel ,setLoading}) => {
         email,
         DOB,
         collegeName,
-        Name
+        Name,
+        number:+number
       }),
     });
     let response = await res.json();
@@ -92,6 +94,17 @@ const Register = ({ setShowAuth,setCurrentModel ,setLoading}) => {
               onChange={(e)=>setDOB(e.target.value)}
             />
           </div>
+
+          <div className="login__field">
+            <input
+              type="text"
+              className="login__input"
+              placeholder="Mobile number"
+              value={number}
+              onChange={(e)=>setNumber(e.target.value)}
+            />
+          </div>
+
           <button type='button' onClick={registerHandler} style={{ margin: "0" }} className="button login__submit">
             <span className="button__text">Register</span>
           </button>

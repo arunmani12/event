@@ -11,26 +11,39 @@ export default async function handler(req, res) {
   const { method } = req;
   if (method === "POST") {
     try {
-      const { email, DOB, collegeName, Name } = req.body;
+      const { email, DOB, collegeName, Name,number } = req.body;
 
       const userIsThere = await User.find({ email });
+
 
       if (userIsThere.length>0) {
         return res.status(401).json({ message: "email is already there" });
       }
 
-      if (!email || !DOB || !collegeName || !Name) {
+      if (!email || !DOB || !collegeName || !Name || !number) {
         return res.status(403).json({ message: "Please enter valid fields" });
       }
 
       var users = await User.find();
 
-      var count = users.length
+      let mNumber = users[0].planId
+
+
+      for(let u of users){
+
+        if(u.planId>mNumber){
+
+           mNumber = u.planId
+
+       }
+
+      }
+
 
       
       const user = await new User({
         ...req.body,
-        planId:count + 1
+        planId:mNumber + 1
       });
 
 

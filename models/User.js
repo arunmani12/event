@@ -9,7 +9,8 @@ const userModel = new Schema({
     orderId:{type: String},
     plan:{type:String},
     planId:{type:Number},
-    events:[String]
+    events:[String],
+    number:{type:Number}
 },
 { timestamps: true })
 
