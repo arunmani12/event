@@ -3,6 +3,7 @@ import Event from "../events/Event";
 import styles from "./Basic.module.css";
 import Basic from "../card/Basic";
 import { url } from "../../global";
+import {useRouter} from "next/router";
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -19,6 +20,11 @@ function loadScript(src) {
 }
 
 const BasicContainer = ({ user }) => {
+
+  const router = useRouter()
+
+  const [number,setNumber] = React.useState('')
+
   async function displayRazerpay(plan) {
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -63,6 +69,32 @@ const BasicContainer = ({ user }) => {
     paymentObject.open();
   }
 
+  const addNumber = async () =>{
+    if(number.length<10){
+      alert('please enter valid number')
+    }
+    const res = await fetch(`${url}/api/update`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: user.email,
+        DOB:user.DOB,
+        number,
+      }),
+    });
+    let response = await res.json();
+    if (response.message == "okie") {
+      router.reload();
+    } else {
+      alert(
+        "something went  wrong "
+      );
+    }
+  };
+
+
   return (
     <div style={{ paddingTop: "10rem" }}>
 
@@ -82,7 +114,28 @@ const BasicContainer = ({ user }) => {
               {user.events.map((d,i)=><p key={d}>{i+1 +"."+" "+ d}</p>)}
            </>}
         </div>
+
       </div>
+
+      {
+          !(user.number) &&  
+          <div className={styles.info}>
+            <h3>Sorry for the incovinent</h3>
+            <p>we forgot to get your number</p>
+            <p style={{marginBottom:'1rem'}}>Mobile Number</p>
+            <input value={number} onChange={(e)=>setNumber(e.target.value)}/>
+            <button
+            type="button"
+            style={{ width: "auto",marginTop:'1rem',padding:'6px 20px' }}
+            className="button login__submit"
+            onClick={addNumber}
+          >
+            <span className="button__text">
+              AddNumber
+            </span>
+          </button>
+          </div>
+      }
 
       <div className={styles.info}>
         <h3>Please Note</h3>
@@ -106,6 +159,7 @@ const BasicContainer = ({ user }) => {
             </span>
           </button>
       </div>
+
 
       <Event user={user}/>
     </div>

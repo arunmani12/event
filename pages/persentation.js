@@ -108,6 +108,7 @@ export default function Home(props) {
               <td>{d.Name}</td>
               <td>{d.email}</td>
               <td>{d.collegeName}</td>
+              {d.number?d.number : 'no number'}
             </tr>
           ))}
         </tbody>
