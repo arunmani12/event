@@ -17,7 +17,9 @@ export default async function handler(req, res) {
 
     const email = dataFromToken.email;
 
-    if(email!=='arunmani9787@gmail.com'){
+    console.log(email)
+
+    if(email!=='arunmani.admin@gmail.com'){
       return res.status(401).json({ message: "no bro" });
     }
 

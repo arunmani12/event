@@ -10,23 +10,7 @@ export default async function handler(req, res) {
 
     try {
         
-       let user =await User.find({})
-
-       let mNumber = user[0].planId
-
-
-       for(let u of user){
-
-         if(u.planId>mNumber){
-
-            mNumber = u.planId
-
-        }
-
-       }
-
-       console.log(mNumber)
-
+       await User.deleteMany({ planId: [176, 117, 118,119,138,139,140] });
 
        res.status(200).json({message: "Success!"});
        
