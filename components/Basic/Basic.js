@@ -120,7 +120,7 @@ const BasicContainer = ({ user }) => {
       {
           !(user.number) &&  
           <div className={styles.info}>
-            <h3>Sorry for the incovinent</h3>
+            <h3>Sorry for the inconvenience</h3>
             <p>we forgot to get your number</p>
             <p style={{marginBottom:'1rem'}}>Mobile Number</p>
             <input value={number} onChange={(e)=>setNumber(e.target.value)}/>
