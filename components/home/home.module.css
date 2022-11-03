@@ -60,6 +60,8 @@
 	.home{
 		margin-bottom: -2rem;
 		flex-direction: column-reverse;
+		height: auto;
+		margin-bottom: 7rem;
 	}
 	.home img{
 		width: 223px;

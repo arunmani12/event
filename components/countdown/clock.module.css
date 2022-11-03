@@ -1,0 +1,29 @@
+.Clock{
+    width: 90%;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background:  rgba(239, 239, 239, 0.06);
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    font-size: 3rem;
+}
+
+.heading{
+    width:90%;
+    margin:0 auto;
+    color:rgb(232,51,99);
+    margin-bottom:2rem;
+    font-size:2rem
+}
+
+@media (max-width: 600px) {
+	.Clock{
+        font-size: 1.2rem;
+    }
+    .heading{
+        font-size: 1rem;
+    }
+  }

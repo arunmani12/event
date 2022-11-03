@@ -4,6 +4,8 @@ import styles from "./Basic.module.css";
 import Basic from "../card/Basic";
 import { url } from "../../global";
 import {useRouter} from "next/router";
+import Clock from "../countdown/Clock";
+
 
 function loadScript(src) {
   return new Promise((resolve) => {
@@ -97,6 +99,8 @@ const BasicContainer = ({ user }) => {
 
   return (
     <div style={{ paddingTop: "10rem" }}>
+
+      <Clock/>
 
       <div className={styles.update}>
         <div className={styles.insideCard}>

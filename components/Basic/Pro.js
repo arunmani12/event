@@ -3,6 +3,7 @@ import React from "react";
 import Event from "../events/Event";
 import styles from "./Basic.module.css";
 import Perimium from "../card/Permium";
+import Clock from "../countdown/Clock";
 
 
 
@@ -11,6 +12,8 @@ const ProContainer = ({ user }) => {
 
   return (
     <div style={{paddingTop:'10rem'}}>
+
+      <Clock/>
 
 
       <div className={styles.update}>
