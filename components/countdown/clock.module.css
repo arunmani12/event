@@ -16,7 +16,22 @@
     margin:0 auto;
     color:rgb(232,51,99);
     margin-bottom:2rem;
-    font-size:2rem
+    font-size:2rem;
+    font-weight: 400;
+}
+
+.para{
+    width:90%;
+    margin:0 auto;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #777;
+    width: 86%;
+    line-height: 140%;
+    /* height: 10rem; */
+    margin: 0 auto;
+    font-size: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 @media (max-width: 600px) {
@@ -25,5 +40,8 @@
     }
     .heading{
         font-size: 1rem;
+    }
+    .para{
+    font-size: 1rem;
     }
   }
