@@ -11,63 +11,63 @@ export default async function handler(req, res) {
   const { method } = req;
   if (method === "POST") {
     try {
-      const { email, DOB, collegeName, Name,number } = req.body;
+      // const { email, DOB, collegeName, Name,number } = req.body;
 
-      const userIsThere = await User.find({ email });
-
-
-      if (userIsThere.length>0) {
-        return res.status(401).json({ message: "email is already there" });
-      }
-
-      if (!email || !DOB || !collegeName || !Name || !number) {
-        return res.status(403).json({ message: "Please enter valid fields" });
-      }
-
-      var users = await User.find();
-
-      let mNumber = users[0].planId
+      // const userIsThere = await User.find({ email });
 
 
-      for(let u of users){
+      // if (userIsThere.length>0) {
+      //   return res.status(401).json({ message: "email is already there" });
+      // }
 
-        if(u.planId>mNumber){
+      // if (!email || !DOB || !collegeName || !Name || !number) {
+      //   return res.status(403).json({ message: "Please enter valid fields" });
+      // }
 
-           mNumber = u.planId
+      // var users = await User.find();
 
-       }
+      // let mNumber = users[0].planId
 
-      }
+
+      // for(let u of users){
+
+      //   if(u.planId>mNumber){
+
+      //      mNumber = u.planId
+
+      //  }
+
+      // }
 
 
       
-      const user = await new User({
-        ...req.body,
-        planId:mNumber + 1
-      });
+      // const user = await new User({
+      //   ...req.body,
+      //   planId:mNumber + 1
+      // });
 
 
-      await user.save();
+      // await user.save();
 
-      const token = sign(
-        {
-          exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
-          email,
-        },
-        secret
-      );
+      // const token = sign(
+      //   {
+      //     exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
+      //     email,
+      //   },
+      //   secret
+      // );
 
-      const serialised = serialize("OursiteJWT", token, {
-        secure: false,
-        maxAge: 60 * 60 * 24 * 30,
-        path: "/",
-      });
-      res.setHeader("Set-Cookie", serialised);
+      // const serialised = serialize("OursiteJWT", token, {
+      //   secure: false,
+      //   maxAge: 60 * 60 * 24 * 30,
+      //   path: "/",
+      // });
+      // res.setHeader("Set-Cookie", serialised);
 
-      res.status(200).json({ user ,message: "Success!"});
+      res.status(200).json({message: "REG CLOSED"})
     } catch (e) {
       console.log(e)
-      res.status(401).json({ message: "something went to wrong" });
+      res.status(401).json({ message: "REG CLOSEDs"});
     }
   }
 }

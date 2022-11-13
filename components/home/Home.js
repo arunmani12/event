@@ -8,9 +8,11 @@ import Clock from "../countdown/Clock";
 const Home = ({setShowAuth}) => {
   return (
     <div>
+      
       <div className={styles.home}>
-
+          
         <div className={styles.inside}>
+          <h3 style={{display:'flex',marginBottom:'1rem'}} >REGISTRATION CLOSED</h3>
           <h3 className={styles.simpleHeading}>Department Of Information Technology</h3>
           <h4 className={styles.simpleHeading}>Proudly Presents,</h4>
           <p className="homeHeading tech">Techfinity&apos;22</p>
